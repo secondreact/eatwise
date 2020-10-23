@@ -1,10 +1,16 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import NavBar from "./NavBar/Navbar";
 
 function ExplorePage() {
   return (
-    <div className="MyHome">
-      <p>Explore Page Test</p>
+    <div>
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route path="/" />
+        </Switch>
+      </Router>
     </div>
   );
 }
