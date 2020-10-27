@@ -1,40 +1,24 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import ExplorePage from "./Components/ExplorePage";
-import ResultsPage from "./Components/ResultsPage";
-import DetailsPage from "./Components/DetailsPage";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.css";
+import ExplorePage from "./ExplorePage";
+import ResultsPage from "./ResultsPage";
+import DetailsPage from "./DetailsPage";
+import AboutPage from "./AboutPage";
+import NavBar from "./Components/NavBar/Navbar";
 
 const MyRoute = () => (
-  <Router>
-    <div>
-      <ul className="AllPages">
-        <li>
-          <Link to="/Explore">
-            {ExplorePage}
-            <p>Explore</p>
-          </Link>
-        </li>
-        <li>
-          <Link to="/Results">
-            {ResultsPage}
-            <p>Results</p>
-          </Link>
-        </li>
-        <li>
-          <Link to="/Details">
-            {DetailsPage}
-            <p>Details</p>
-          </Link>
-        </li>
-      </ul>
-      <hr />
-
-      <Route exact path="/Explore" component={ExplorePage} />
-      <Route path="/Results" component={ResultsPage} />
-      <Route path="/Details" component={DetailsPage} />
-    </div>
-  </Router>
+  <div>
+    <Router>
+      <NavBar />
+      <Switch>
+        <Route path="/explore" exact component={ExplorePage} />
+        <Route path="/results" component={ResultsPage} />
+        <Route path="/details" component={DetailsPage} />
+        <Route path="/about" component={AboutPage} />
+      </Switch>
+    </Router>
+  </div>
 );
 
 export default MyRoute;
