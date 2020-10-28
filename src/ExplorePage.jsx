@@ -15,3 +15,9 @@ function ExplorePage() {
 }
 
 export default ExplorePage;
+
+
+// store data from API in the state
+// has to be converted to a class component
+// data needs to be stored in the state, pass the props to categories
+

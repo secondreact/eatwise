@@ -1,4 +1,5 @@
 import React from 'react'
+import AllergensSection from './AllergensSection'
 import './Productdetails.css'
 
 export default function BasicInformation() {
@@ -13,7 +14,10 @@ export default function BasicInformation() {
           <h3>Mondelez-international</h3>
         </div>
       </div>
-  {/* until here the other data will be done in separate components */}
+  
+  
+  
+  {/* these are JUST PLACEHOLDER FIELDS - until here the other data will be done in separate components */}
       <div className="secondary-info">
         <div className="contains-data">
         <h5>This product contains</h5>
@@ -23,7 +27,8 @@ export default function BasicInformation() {
         </div>
         <div className="allergens-data">
           <h5>Allergens Information</h5>
-            <div className="allergens-icon">1</div>
+            <AllergensSection/>
+            <div className="allergens-icon"></div>
             <div className="allergens-icon">2</div>
             <div className="allergens-icon">3</div>
         </div>
