@@ -10,14 +10,15 @@
   
 .image-section{
   background-color: lavender;
-  border: solid 1px green;
+  border: solid 1px blue;
   width: 40%;
   margin-right: 20px;
 }
 
 .product-images{
-  background-color: lightsteelblue;
-  border: solid 1px blue;
+  background-image: url(https://tinyurl.com/y323okpr);
+  background-repeat: round;
+  border: solid 1px gray;
   border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -26,4 +27,32 @@
 
 .main-data{
   flex-direction: column;
+}
+
+/* this CSS is just to identify the items - it will be changed */
+div{
+  border-bottom: solid 1px lightcoral;
+}
+
+.contents-icon{
+  background-color: #DBFF75;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+.allergens-icon{
+  background-color: #FF6461;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+.novascore p:nth-child(2){
+  background-color: lightslategray;
+  width: 80px;
+  height: 100px;
+  margin: 5px;
 }
