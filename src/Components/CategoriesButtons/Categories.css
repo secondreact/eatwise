@@ -1,0 +1,21 @@
+.buttons-section{
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(3, 33%);
+  padding: 10px;
+  /* border: solid 1px gray; */
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%; 
+}
+
+.category-button{
+  background-color: #EFEEEE;
+  color: #4a4949;
+  border-radius: 30px;
+  border: solid 1px #090909;
+  margin: 5px;
+  padding: 8px;
+  width: 100px;
+}

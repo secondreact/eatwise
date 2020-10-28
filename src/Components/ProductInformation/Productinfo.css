@@ -1,0 +1,31 @@
+.product-card{
+  background-color: whitesmoke;
+  border: solid 1px red;
+  width: 40%;
+  height: fit-content;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 30px;
+}
+
+.img-card{
+  height: 120px;
+  width: 120px;
+  border: solid 1px gray;
+  border-radius: 50%;
+  background-color: lightgray;
+}
+
+.product-card h2{
+  color: black;
+}
+
+.product-card p{
+  color: #FA4A0C;
+  font-size: 1.3em;
+}
+
+.results-list{
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
