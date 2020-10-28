@@ -1,5 +1,6 @@
 import React from 'react'
-import AllergensSection from './AllergensSection'
+import AllergensSection from './AllergensSection';
+import Contains from './Contains'
 import './Productdetails.css'
 
 export default function BasicInformation() {
@@ -21,16 +22,17 @@ export default function BasicInformation() {
       <div className="secondary-info">
         <div className="contains-data">
         <h5>This product contains</h5>
-          <div className="contents-icon">1</div>
+          <Contains/>
+          {/* <div className="contents-icon">1</div>
           <div className="contents-icon">2</div>
-          <div className="contents-icon">3</div>
+          <div className="contents-icon">3</div> */}
         </div>
         <div className="allergens-data">
           <h5>Allergens Information</h5>
             <AllergensSection/>
-            <div className="allergens-icon"></div>
+            {/* <div className="allergens-icon"></div>
             <div className="allergens-icon">2</div>
-            <div className="allergens-icon">3</div>
+            <div className="allergens-icon">3</div> */}
         </div>
         <div className="ingredients-data">
           <h5>Ingredients</h5>
