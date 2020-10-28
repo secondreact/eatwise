@@ -1,0 +1,29 @@
+.main-product-info{
+  display: flex;
+  background-color: whitesmoke;
+  border: solid 1px red;
+  width: 100%;
+  height: fit-content;
+  padding: 10px;
+  box-sizing: border-box;
+}
+  
+.image-section{
+  background-color: lavender;
+  border: solid 1px green;
+  width: 40%;
+  margin-right: 20px;
+}
+
+.product-images{
+  background-color: lightsteelblue;
+  border: solid 1px blue;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-top: 15px;
+}
+
+.main-data{
+  flex-direction: column;
+}
