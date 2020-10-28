@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ProductCard from "./Components/ProductInformation/ProductCard";
+import ResultsContainer from "./Components/ProductInformation/ResultsContainer";
 import "./Components/ProductInformation/Productinfo.css"
 
 function ResultsPage() {
@@ -7,14 +7,7 @@ function ResultsPage() {
     <div>
       <div>
         <h1>Results Page</h1>
-          <div className="results-list">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-          </div>
+            <ResultsContainer />
       </div>
     </div>
   );
