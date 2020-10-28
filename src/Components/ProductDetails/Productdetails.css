@@ -34,6 +34,12 @@ div{
   border-bottom: solid 1px lightcoral;
 }
 
+.secondary-info{
+  padding: 10px;
+  text-align:left;
+  font-size: 12px;
+}
+
 .contents-icon{
   background-color: #DBFF75;
   border-radius: 50%;

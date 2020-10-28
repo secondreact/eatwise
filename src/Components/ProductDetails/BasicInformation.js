@@ -14,11 +14,12 @@ export default function BasicInformation() {
         </div>
       </div>
   {/* until here the other data will be done in separate components */}
+      <div className="secondary-info">
         <div className="contains-data">
-          <h5>This product contains</h5>
-            <div className="contents-icon">1</div>
-            <div className="contents-icon">2</div>
-            <div className="contents-icon">3</div>
+        <h5>This product contains</h5>
+          <div className="contents-icon">1</div>
+          <div className="contents-icon">2</div>
+          <div className="contents-icon">3</div>
         </div>
         <div className="allergens-data">
           <h5>Allergens Information</h5>
@@ -53,6 +54,7 @@ export default function BasicInformation() {
           <h5>Nutrition Facts</h5>
             <div>Nutrients Table</div>
         </div>
+      </div>
     </div>
   )
 }
