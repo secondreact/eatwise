@@ -7,15 +7,27 @@
   /* border: solid 1px gray; */
   margin-left: auto;
   margin-right: auto;
-  width: 80%; 
+  width: 80%;
+  margin-bottom: 30px; 
 }
 
 .category-button{
+  font-family: inherit;
+  cursor: pointer;
   background-color: #EFEEEE;
   color: #4a4949;
   border-radius: 30px;
-  border: solid 1px #090909;
   margin: 5px;
-  padding: 8px;
-  width: 100px;
+  padding: 8px 10px; 
+  width: 120px;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.category-button:hover{
+  background-color: #ff6461;
+  color: white;
+}
+
+.button-selected{
+  background-color: #bd3735;
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import BasicInformation from './Components/ProductDetails/BasicInformation'
+import BasicInformation from '../components/ProductDetails/BasicInformation'
 
 function DetailsPage() {
   return (

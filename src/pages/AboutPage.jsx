@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Footer from './Components/Footer/Footer'
+import Footer from '../components/Footer/Footer'
 
 function AboutPage() {
   return (

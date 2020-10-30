@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ResultsContainer from "./Components/ProductInformation/ResultsContainer";
-import "./Components/ProductInformation/Productinfo.css"
+import ResultsContainer from "../components/ProductInformation/ResultsContainer";
+import "../components/ProductInformation/Productinfo.css"
 
 function ResultsPage() {
   return (
