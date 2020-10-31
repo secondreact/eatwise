@@ -7,7 +7,7 @@ import "./Productinfo.css";
           <div>
             <img className="product-image" src={props.image}/>
           </div>
-          <h2>{props.product_name_en}</h2>
+          <h2 className="product-header">{props.product_name_en}</h2>
           <p>{props.brands_tags}</p>
         </div>
     );

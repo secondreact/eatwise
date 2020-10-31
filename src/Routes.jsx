@@ -1,14 +1,14 @@
 import React, {Component} from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.css";
-import ExplorePage from "./ExplorePage";
-import ResultsPage from "./ResultsPage";
-import DetailsPage from "./DetailsPage";
-import AboutPage from "./AboutPage";
-import NavBar from "./Components/NavBar/Navbar";
+import ExplorePage from "./pages/ExplorePage";
+import ResultsPage from "./pages/ResultsPage";
+import DetailsPage from "./pages/DetailsPage";
+import AboutPage from "./pages/AboutPage";
+import NavBar from "./components/NavBar/Navbar";
 
 
-export default class MyRoute extends Component {
+export default class Routes extends Component {
 // ...Here goes the API call, constuctor, super, state + componentDidM
 // set state with result of the api
 
