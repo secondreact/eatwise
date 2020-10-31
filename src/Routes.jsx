@@ -8,7 +8,7 @@ import AboutPage from "./pages/AboutPage";
 import NavBar from "./components/NavBar/Navbar";
 
 
-export default class MyRoute extends Component {
+export default class Routes extends Component {
 // ...Here goes the API call, constuctor, super, state + componentDidM
 // set state with result of the api
 
