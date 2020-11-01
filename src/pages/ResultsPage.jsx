@@ -11,12 +11,12 @@ export default class ResultsPage extends Component {
       products: []
     };
 
-    this.queryChange = this.queryChange.bind(this);
+   this.queryChange = this.queryChange.bind(this);
+   this.searchProducts = this.searchProducts.bind(this);
   }
-
   
-  loadProducts(){
-    fetch('https://en-en.openfoodfacts.org/brand/ferrero/1.json')
+  loadProducts(brand){
+    fetch(`https://en-en.openfoodfacts.org/brand/${brand}/1.json`)
     .then((data) => data.json())
     .then((response) =>{
       this.setState({products:response.products})
@@ -24,11 +24,15 @@ export default class ResultsPage extends Component {
   }
 
   componentDidMount(){
-    this.loadProducts();
+    // this.loadProducts(this.state.query);
   }
 
   queryChange(event){
     this.setState({query: event.target.value});
+  }
+
+  searchProducts(){
+    this.loadProducts(this.state.query);
   }
 
   render(){
@@ -36,15 +40,16 @@ export default class ResultsPage extends Component {
       <div>
         <div>
           <h4>Results Page</h4>
-            <input onChange={this.queryChange} className="search-bar" type="text" placeholder="Search"></input>
+            <input className="search-bar" onChange={this.queryChange} type="text" placeholder="Find products"></input>
+            <button className="search-button" onClick={this.searchProducts}>Search</button>
           <div className="results-list">
             {this.state.products.map((item)=>{
               return(           
-                  <ProductCard product_name_en={item.product_name_es} brands_tags={item.brands} image={item.image_small_url}/>
+                  <ProductCard productName={item.product_name} brand={item.brands} image={item.image_small_url}/>
               )
             })}
           </div>
-          <ResultsContainer />
+          {/* <ResultsContainer /> */}
         </div>
       </div>
     );

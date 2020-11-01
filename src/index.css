@@ -36,3 +36,12 @@ code {
   margin-bottom: 30px;
   margin-left: 0;
 }
+
+.search-button{
+  background-color: lightcoral;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.65);
+  width: 80px;
+  margin: 5px;
+}
