@@ -47,3 +47,9 @@ code {
   width: 80px;
   margin: 5px;
 }
+
+.details-image{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}

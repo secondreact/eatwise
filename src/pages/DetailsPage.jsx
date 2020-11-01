@@ -27,9 +27,9 @@ export default class DetailsPage extends Component {
       <div>
         <div>
           <h4>Details Page</h4>
-
-          {this.state.product?.product_name}
-
+          <img className="details-image" src={this.state.product?.image_front_url}/>
+          <h2>{this.state.product?.product_name}</h2>
+          <h3>{this.state.product?.brands}</h3>
         </div>
       </div>
     );
