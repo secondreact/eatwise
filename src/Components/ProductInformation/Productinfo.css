@@ -25,7 +25,7 @@
   border-radius: 50%;
   /* border: solid 1px gray; */
   background-color: rgb(238, 238, 238);
-  box-shadow: 6px 8px 10px rgba(57, 57, 57, 0.14);
+  /* box-shadow: 6px 8px 10px rgba(57, 57, 57, 0.14); */
   object-fit: contain;
   margin-bottom: 5px;
 }

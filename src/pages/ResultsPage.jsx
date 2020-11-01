@@ -45,7 +45,7 @@ export default class ResultsPage extends Component {
           <div className="results-list">
             {this.state.products.map((item)=>{
               return(           
-                  <ProductCard productName={item.product_name} brand={item.brands} image={item.image_small_url}/>
+                  <ProductCard productName={item.product_name} brand={item.brands} image={item.image_small_url} code={item.code}/>
               )
             })}
           </div>

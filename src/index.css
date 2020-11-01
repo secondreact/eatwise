@@ -39,9 +39,11 @@ code {
 
 .search-button{
   background-color: lightcoral;
+  color: white;
+  font-weight: 800;
   padding: 10px;
   border-radius: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.65);
+  border: 0.2px solid rgba(0, 0, 0, 0.65);
   width: 80px;
   margin: 5px;
 }
