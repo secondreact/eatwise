@@ -29,5 +29,13 @@
 }
 
 .button-selected{
-  background-color: #bd3735;
+  font-family: inherit;
+  cursor: pointer;
+  background-color: #ff6461;
+  color: white;
+  border-radius: 30px;
+  margin: 5px;
+  padding: 8px 10px; 
+  width: 120px;
+  border: none;
 }
