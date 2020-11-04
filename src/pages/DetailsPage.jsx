@@ -25,7 +25,7 @@ export default class DetailsPage extends Component {
     return (
       <div>
         <div>
-          <h4>Details Page</h4>
+          <h4>Details Page test</h4>
           <img className="details-image" src={this.state.product?.image_front_url}/>
           <h2>{this.state.product?.product_name}</h2>
           <h3>{this.state.product?.brands}</h3>
