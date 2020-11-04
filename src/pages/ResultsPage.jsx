@@ -1,10 +1,11 @@
-import React, { Component } from "react";
-import Footer from "../Components/Footer/Footer";
+import React from "react";
+import Categories from '../Components/CategoriesButtons/CategoriesButtons'
 import "../Components/ProductInformation/Productinfo.css";
 import ProductCard from '../Components/ProductInformation/ProductCard'
-import Categories from '../Components/CategoriesButtons/CategoriesButtons'
+import Footer from "../Components/Footer/Footer";
 
-export default class ResultsPage extends Component {
+
+export default class ResultsPage extends React.Component {
   constructor(){
     super();
     this.state = {
@@ -44,7 +45,8 @@ export default class ResultsPage extends Component {
           <h4>Results Page</h4>
             <input className="search-bar" onChange={this.queryChange} type="text" placeholder="Find products"></input>
             <button className="search-button" onClick={this.searchProducts}>Search</button>
-            <Categories/>
+            {/* <Categories/> */}
+            <div>filter goes here</div>
           <div className="results-list">
             {this.state.products.map((item)=>{
               return(           

@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Footer from '../Components/Footer/Footer'
+import BasicInformation from '../Components/ProductDetails/BasicInformation'
 
 function AboutPage() {
   return (
     <div>
       <div>
         <h2>About EatWise</h2>
+        {/* <BasicInformation/> */}
         <h4>Our Values</h4>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor neque labore, laboriosam qui similique sapiente iste quae ullam unde aliquid quidem? Minima laudantium culpa laboriosam unde consequuntur fugit dicta voluptatum.

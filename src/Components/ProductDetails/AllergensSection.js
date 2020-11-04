@@ -8,7 +8,7 @@ import {
   Nuts,
   Peanuts,
   Sugar,
-  Vegan} from '../../shared/icons';
+  Vegan} from '../../pages/shared/icons';
 
 export default function AllergensSection() {
   return (

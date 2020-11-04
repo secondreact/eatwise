@@ -16,23 +16,15 @@ export default function BasicInformation() {
         </div>
       </div>
   
-  
-  
   {/* these are JUST PLACEHOLDER FIELDS - until here the other data will be done in separate components */}
       <div className="secondary-info">
         <div className="contains-data">
         <h5>This product contains</h5>
           <Contains/>
-          {/* <div className="contents-icon">1</div>
-          <div className="contents-icon">2</div>
-          <div className="contents-icon">3</div> */}
         </div>
         <div className="allergens-data">
           <h5>Allergens Information</h5>
-            <AllergensSection/>
-            {/* <div className="allergens-icon"></div>
-            <div className="allergens-icon">2</div>
-            <div className="allergens-icon">3</div> */}
+          <AllergensSection/>
         </div>
         <div className="ingredients-data">
           <h5>Ingredients</h5>
