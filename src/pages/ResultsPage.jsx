@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import ResultsContainer from "../components/ProductInformation/ResultsContainer";
-import "../components/ProductInformation/Productinfo.css";
-import ProductCard from '../components/ProductInformation/ProductCard'
+import ResultsContainer from "../Components/ProductInformation/ResultsContainer";
+import "../Components/ProductInformation/Productinfo.css";
+import ProductCard from '../Components/ProductInformation/ProductCard'
 
 export default class ResultsPage extends Component {
   constructor(){
