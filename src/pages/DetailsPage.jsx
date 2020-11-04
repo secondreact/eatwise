@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-
 export default class DetailsPage extends Component {
   constructor(props){
     super(props);

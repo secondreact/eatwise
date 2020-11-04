@@ -22,7 +22,6 @@ export default function Contains() {
       <PeanutsIcon/>
       <SugarIcon/>
       <VeganIcon/>
-
     </div>
   )
 }
