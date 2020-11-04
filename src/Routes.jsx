@@ -5,7 +5,7 @@ import ExplorePage from "./pages/ExplorePage";
 import ResultsPage from "./pages/ResultsPage";
 import DetailsPage from "./pages/DetailsPage";
 import AboutPage from "./pages/AboutPage";
-import NavBar from "./components/NavBar/Navbar";
+import NavBar from "./Components/NavBar/Navbar";
 
 
 export default class Routes extends Component {

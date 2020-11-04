@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { FaIcons } from "react-icons/fa";
-import Categories from '../components/CategoriesButtons/CategoriesButtons'
-import Footer from '../components/Footer/Footer'
+import Categories from '../Components/CategoriesButtons/CategoriesButtons'
+import Footer from '../Components/Footer/Footer'
 import '../index.css'
 
 function ExplorePage() {
