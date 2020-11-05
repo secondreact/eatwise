@@ -1,7 +1,7 @@
 import React from "react";
 import Categories from '../Components/CategoriesButtons/CategoriesButtons'
-import "../Components/ProductInformation/Productinfo.css";
-import ProductCard from '../Components/ProductInformation/ProductCard'
+import "../Components/ProductResults/Productinfo.css";
+import ProductCard from '../Components/ProductResults/ProductCard'
 import Footer from "../Components/Footer/Footer";
 
 
@@ -42,11 +42,11 @@ export default class ResultsPage extends React.Component {
     return (
       <div>
         <div>
-          <h4>Results Page</h4>
+          <h5>Results Page</h5>
             <input className="search-bar" onChange={this.queryChange} type="text" placeholder="Find products"></input>
             <button className="search-button" onClick={this.searchProducts}>Search</button>
-            {/* <Categories/> */}
-            <div>filter goes here</div>
+            <Categories/>
+            {/* <div>filter goes here</div> */}
           <div className="results-list">
             {this.state.products.map((item)=>{
               return(           
@@ -55,7 +55,6 @@ export default class ResultsPage extends React.Component {
               )
             })}
           </div>
-          {/* <ResultsContainer /> */}
         </div>
         <Footer/>
       </div>

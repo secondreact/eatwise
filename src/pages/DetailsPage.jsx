@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import BasicInformation from '../Components/ProductDetails/BasicInformation'
 
 export default class DetailsPage extends Component {
   constructor(props){
@@ -26,9 +27,10 @@ export default class DetailsPage extends Component {
       <div>
         <div>
           <h4>Details Page test</h4>
-          <img className="details-image" src={this.state.product?.image_front_url}/>
+          <img className="details-image" src={this.state.product?.image_front_url} alt={`${this.state.product?.product_name}`}/>
           <h2>{this.state.product?.product_name}</h2>
           <h3>{this.state.product?.brands}</h3>
+          <BasicInformation/>
         </div>
       </div>
     );
@@ -43,7 +45,7 @@ export default class DetailsPage extends Component {
 
 
 
-// import BasicInformation from '../components/ProductDetails/BasicInformation'
+
 
 // function DetailsPage() {
 //   return (

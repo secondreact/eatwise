@@ -6,17 +6,16 @@ import './Productdetails.css'
 export default function BasicInformation() {
   return (
     <div>
+    <h3>!! -- The data below is just there as a placeholder it will be replaced with the product fetched data</h3>
       <div className="main-product-info">
         <div className="image-section">
-          <img className="product-images"></img>
+          {/* <img className="product-images" alt="ritter"/> */}
         </div>
         <div className="main-data">
           <h2>Haribo Saft Goldbears</h2>
           <h3>Mondelez-international</h3>
         </div>
       </div>
-  
-  {/* these are JUST PLACEHOLDER FIELDS - until here the other data will be done in separate components */}
       <div className="secondary-info">
         <div className="contains-data">
         <h5>This product contains</h5>
