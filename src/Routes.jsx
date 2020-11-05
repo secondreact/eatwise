@@ -9,16 +9,12 @@ import NavBar from "./Components/NavBar/Navbar";
 
 
 export default class Routes extends Component {
-// ...Here goes the API call, constuctor, super, state + componentDidM
-// set state with result of the api
-
   render() {
-    // console.log (state) ... pass contents as props to the children
     return (
       <Router>
       <NavBar />
       <Switch>
-        <Route exact path="/" component={ResultsPage} />
+        <Route exact path="/" component={ResultsPage} /> 
         <Route exact path="/details/:code" component={DetailsPage} />
         <Route exact path="/about" component={AboutPage} />
       </Switch>
