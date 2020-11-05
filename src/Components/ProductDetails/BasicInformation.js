@@ -6,33 +6,24 @@ import './Productdetails.css'
 export default function BasicInformation() {
   return (
     <div>
+    <h3>!! -- The data below is just there as a placeholder it will be replaced with the product fetched data</h3>
       <div className="main-product-info">
         <div className="image-section">
-          <img className="product-images"></img>
+          {/* <img className="product-images" alt="ritter"/> */}
         </div>
         <div className="main-data">
           <h2>Haribo Saft Goldbears</h2>
           <h3>Mondelez-international</h3>
         </div>
       </div>
-  
-  
-  
-  {/* these are JUST PLACEHOLDER FIELDS - until here the other data will be done in separate components */}
       <div className="secondary-info">
         <div className="contains-data">
         <h5>This product contains</h5>
           <Contains/>
-          {/* <div className="contents-icon">1</div>
-          <div className="contents-icon">2</div>
-          <div className="contents-icon">3</div> */}
         </div>
         <div className="allergens-data">
           <h5>Allergens Information</h5>
-            <AllergensSection/>
-            {/* <div className="allergens-icon"></div>
-            <div className="allergens-icon">2</div>
-            <div className="allergens-icon">3</div> */}
+          <AllergensSection/>
         </div>
         <div className="ingredients-data">
           <h5>Ingredients</h5>

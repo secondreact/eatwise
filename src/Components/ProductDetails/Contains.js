@@ -8,7 +8,7 @@ import {
   NutsIcon,
   PeanutsIcon,
   SugarIcon,
-  VeganIcon } from '../../shared/icons';
+  VeganIcon } from '../../pages/shared/icons';
 
 export default function Contains() {
   return (

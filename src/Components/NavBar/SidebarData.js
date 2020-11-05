@@ -4,14 +4,8 @@ import * as AiIcons from "react-icons/ai";
 
 export const SidebarData = [
   {
-    title: "Explore",
-    path: "/explore",
-    icon: <AiIcons.AiOutlineSearch />,
-    cName: "nav-text",
-  },
-  {
     title: "Results",
-    path: "/results",
+    path: "/",
     icon: <AiIcons.AiOutlineUnorderedList />,
     cName: "nav-text",
   },

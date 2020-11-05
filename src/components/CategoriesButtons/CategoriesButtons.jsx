@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import './Categories.css'
 
 export default class Categories extends Component {
