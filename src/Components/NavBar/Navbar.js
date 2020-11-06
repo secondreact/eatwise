@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import "./Navbar.scss";
 import { IconContext } from "react-icons";
+import Logo from "../../pages/shared/logo/logotest.png";
 
 function NavBar() {
   const [sidebar, setSidebar] = useState(false);
@@ -36,6 +37,7 @@ function NavBar() {
             })}
           </ul>
         </nav>
+        <img className="navbar-logo" src={Logo} alt="Logo" />
       </IconContext.Provider>
     </div>
   );

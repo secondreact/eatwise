@@ -1,11 +1,12 @@
 .navbar {
   background-color: #ff6461;
   /* border: 3px solid blue; */
-  height: 3.1rem;
+  height: 3.3rem;
   display: flex;
   justify-content: start;
   align-items: center;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   width: 100%;
   top: 0;
   left: 0;
@@ -80,4 +81,12 @@
 
 span {
   margin-left: 16px;
+}
+
+.navbar-logo {
+  position: absolute;
+  right: 9px;
+  top: 0;
+  width: 8.5rem;
+  height: 3.3rem;
 }

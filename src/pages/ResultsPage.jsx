@@ -5,7 +5,7 @@ import "../Components/NavBar/Searchbar.scss";
 import ProductCard from "../Components/ProductResults/ProductCard";
 import Footer from "../Components/Footer/Footer";
 
-// API ENDPOINT: https://world.openfoodfacts.org/
+// API ENDPOINT: https://world.openfoodfacts.org/ https://world.openfoodfacts.org/brand/nutella/1.json
 
 export default class ResultsPage extends Component {
   constructor() {
@@ -20,7 +20,7 @@ export default class ResultsPage extends Component {
   }
 
   loadProducts(brand) {
-    fetch(`https://en-en.openfoodfacts.org/branjjjjjd/${brand}/1.json`)
+    fetch(`https://en-en.openfoodfacts.org/brand/${brand}/1.json`)
       .then((data) => data.json())
       .then((response) => {
         this.setState({ products: response.products });
@@ -46,7 +46,7 @@ export default class ResultsPage extends Component {
     return (
       <div>
         <div>
-          <h5>Results Page</h5>
+          <h3>Results Page</h3>
           <div className="search">
             <input
               className="search-bar"
