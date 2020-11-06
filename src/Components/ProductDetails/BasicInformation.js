@@ -17,10 +17,10 @@ export default function BasicInformation() {
         </div>
       </div> */}
       <div className="secondary-info">
-        <div className="contains-data">
+        {/* <div className="contains-data">
           <h5>This product contains</h5>
           <Contains />
-        </div>
+        </div> */}
         <div className="allergens-data">
           <h5>Allergens Information</h5>
           <AllergensSection />

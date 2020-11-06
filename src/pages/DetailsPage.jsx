@@ -1,61 +1,47 @@
 import React, { Component } from "react";
-import BasicInformation from '../Components/ProductDetails/BasicInformation'
+import BasicInformation from "../Components/ProductDetails/BasicInformation";
+import Contains from "../Components/ProductDetails/Contains";
+
+// you can use this test product code: https://world.openfoodfacts.org/api/v0/product/3017620422003
 
 export default class DetailsPage extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      product: {}
+      product: {},
     };
   }
-  
-  getProductInformation(code){
+
+  getProductInformation(code) {
     fetch(`https://world.openfoodfacts.org/api/v0/product/${code}`)
-    .then((data) => data.json())
-    .then((response) =>{
-      this.setState({product: response.product})
-    });
+      .then((data) => data.json())
+      .then((response) => {
+        this.setState({ product: response.product });
+      });
   }
 
-  componentDidMount(){
+  componentDidMount() {
     let productCode = this.props.match.params.code;
     this.getProductInformation(productCode);
   }
 
-  render(){
+  render() {
     return (
       <div>
         <div>
           <h4>Details Page test</h4>
-          <img className="details-image" src={this.state.product?.image_front_url} alt={`${this.state.product?.product_name}`}/>
+          <img
+            className="details-image"
+            src={this.state.product?.image_front_url}
+            alt={`${this.state.product?.product_name}`}
+          />
           <h2>{this.state.product?.product_name}</h2>
           <h3>{this.state.product?.brands}</h3>
-          <BasicInformation/>
+          <h4>Contains test</h4>
+          <Contains contains={this.state.product?.ingredients_analysis_tags} />
+          <BasicInformation />
         </div>
       </div>
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-// function DetailsPage() {
-//   return (
-//     <div>
-//       <div>
-//         <h1>Details Page</h1>
-//         <BasicInformation/>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default DetailsPage;

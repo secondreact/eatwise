@@ -1,5 +1,5 @@
-import React from 'react';
-import { 
+import React from "react";
+import {
   Eggs,
   Fats,
   Fish,
@@ -8,20 +8,22 @@ import {
   Nuts,
   Peanuts,
   Sugar,
-  Vegan} from '../../pages/shared/icons';
+  Vegan,
+} from "../../pages/shared/icons";
 
 export default function AllergensSection() {
   return (
     <div>
-      <Eggs/>
-      <Fats/>
-      <Fish/>
-      <Gluten/>
-      <Lactose/>
-      <Nuts/>
-      <Peanuts/>
-      <Sugar/>
-      <Vegan/>
+      <Eggs />
+      <Fats />
+      <Fish />
+      <Gluten />
+      <Lactose />
+      <Nuts />
+      <Peanuts />
+      {/* <Sugar/> */}
+      {/* Sofi note: I have to fix the sugar icon */}
+      <Vegan />
     </div>
-  )
+  );
 }

@@ -1,27 +1,34 @@
-import React from 'react';
-import { 
+import React from "react";
+import {
   EggIcon,
-  FishIcon, 
+  FishIcon,
   FatsIcon,
   GlutenIcon,
   LactoseIcon,
   NutsIcon,
   PeanutsIcon,
   SugarIcon,
-  VeganIcon } from '../../pages/shared/icons';
+  VeganIcon,
+} from "../../pages/shared/icons";
 
-export default function Contains() {
+export default function Contains(props) {
+  console.log(props.contains);
+  let containsArray = props.contains;
   return (
     <div>
-      <EggIcon/>
-      <FatsIcon/>
-      <FishIcon/>
-      <GlutenIcon/>
-      <LactoseIcon/>
-      <NutsIcon/>
-      <PeanutsIcon/>
-      <SugarIcon/>
-      <VeganIcon/>
+      {containsArray?.map((ingredient) => {
+        return <li>{ingredient}</li>;
+      })}
+      <h4>icons</h4>
+      <EggIcon />
+      <FatsIcon />
+      <FishIcon />
+      <GlutenIcon />
+      <LactoseIcon />
+      <NutsIcon />
+      <PeanutsIcon />
+      <SugarIcon />
+      <VeganIcon />
     </div>
-  )
+  );
 }
