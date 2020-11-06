@@ -11,14 +11,16 @@ import NavBar from "./Components/NavBar/Navbar";
 export default class Routes extends Component {
   render() {
     return (
+      <div class="wrap">
       <Router>
-      <NavBar />
-      <Switch>
-        <Route exact path="/" component={ResultsPage} /> 
-        <Route exact path="/details/:code" component={DetailsPage} />
-        <Route exact path="/about" component={AboutPage} />
-      </Switch>
-    </Router>
+        <NavBar />
+        <Switch>
+          <Route exact path="/" component={ResultsPage} /> 
+          <Route exact path="/details/:code" component={DetailsPage} />
+          <Route exact path="/about" component={AboutPage} />
+        </Switch>
+      </Router>
+      </div>
     )
   }
 }
