@@ -6,7 +6,6 @@ import "./Productdetails.css";
 export default function BasicInformation() {
   return (
     <div>
-      {/* <h3>!! -- The data below is just there as a placeholder it will be replaced with the product fetched data</h3> */}
       {/* <div className="main-product-info">
         <div className="image-section"> */}
       {/* <img className="product-images" alt="ritter"/> */}
@@ -22,9 +21,13 @@ export default function BasicInformation() {
           <Contains />
         </div> */}
         <div className="allergens-data">
-          <h5>Allergens Information</h5>
-          <AllergensSection />
+          {/* <h5>Allergens Information</h5> */}
+          {/* <AllergensSection /> */}
         </div>
+        <h3>
+          !! -- The data below is just there as a placeholder it will be
+          replaced with the product fetched data
+        </h3>
         <div className="ingredients-data">
           <h5>Ingredients</h5>
           <p>

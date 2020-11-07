@@ -37,7 +37,9 @@ function NavBar() {
             })}
           </ul>
         </nav>
-        <img className="navbar-logo" src={Logo} alt="Logo" />
+        <Link to="/">
+          <img className="navbar-logo" src={Logo} alt="Logo" />
+        </Link>
       </IconContext.Provider>
     </div>
   );

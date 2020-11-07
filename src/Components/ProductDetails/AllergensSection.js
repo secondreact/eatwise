@@ -11,9 +11,14 @@ import {
   Vegan,
 } from "../../pages/shared/icons";
 
-export default function AllergensSection() {
+export default function AllergensSection(props) {
+  let allergensList = props.allergens;
   return (
     <div>
+      {allergensList?.map((ingredient) => {
+        return <li>{ingredient}</li>;
+      })}
+      <h4>allergens icons</h4>
       <Eggs />
       <Fats />
       <Fish />
