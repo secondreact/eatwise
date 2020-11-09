@@ -1,14 +1,14 @@
-.results-list{
+.results-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 10px;
   /* border: solid 1px red; */
   margin: 15px;
-  font-size: 14px;;
+  font-size: 14px;
 }
 
-.product-card{
+.product-card {
   background-color: white;
   border: solid 1px lightgray;
   width: 250px;
@@ -19,7 +19,7 @@
   border-radius: 10px;
 }
 
-.product-image{
+.product-image {
   height: 180px;
   width: 180px;
   border-radius: 50%;
@@ -30,14 +30,14 @@
   margin-bottom: 5px;
 }
 
-.product-header{
+.product-header {
   font-family: inherit;
   color: black;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   box-sizing: border-box;
 }
 
-.product-card p{
+.product-card p {
   color: black;
   font-size: 1.2em;
 }

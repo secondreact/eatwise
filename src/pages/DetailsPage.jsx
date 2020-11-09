@@ -43,7 +43,7 @@ export default class DetailsPage extends Component {
           <Contains contains={this.state.product?.ingredients_analysis_tags} />
           <AllergensSection allergens={this.state.product?.allergens_tags} />
           {/* <NutrientLevels nutrientLevels={this.state.product?.nutrient_levels} /> */}
-          <BasicInformation />
+          {/* <BasicInformation /> */}
         </div>
       </div>
     );

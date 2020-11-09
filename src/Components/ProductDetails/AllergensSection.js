@@ -18,6 +18,7 @@ export default function AllergensSection(props) {
       {allergensList?.map((ingredient) => {
         return <li>{ingredient}</li>;
       })}
+
       <h4>allergens icons</h4>
       <Eggs />
       <Fats />
