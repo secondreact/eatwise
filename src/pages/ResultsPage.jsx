@@ -24,8 +24,11 @@ export default class ResultsPage extends Component {
     this.getFilteredProducts = this.getFilteredProducts.bind(this); // Version v2.0
   }
 
-  loadProducts(brand) {
-    fetch(`https://en-en.openfoodfacts.org/brand/${brand}/1.json`)
+  loadProducts(productName) {
+    fetch(
+      `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${productName}&search_simple=1&json=true`
+    )
+      // fetch(`https://en-en.openfoodfacts.org/brand/${brand}/1.json`)
       .then((data) => data.json())
       .then((response) => {
         this.setState({ products: response.products });

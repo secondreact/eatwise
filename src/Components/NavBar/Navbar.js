@@ -38,7 +38,8 @@ function NavBar() {
           </ul>
         </nav>
         <Link to="/">
-          <img className="navbar-logo" src={Logo} alt="Logo" />
+          <div className="navbar-logo">EatWise Logo</div>
+          {/* <img className="navbar-logo" src={Logo} alt="Logo" /> */}
         </Link>
       </IconContext.Provider>
     </div>

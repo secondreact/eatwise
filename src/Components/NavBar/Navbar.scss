@@ -83,7 +83,12 @@ span {
   margin-left: 16px;
 }
 
+// this will be deleted once we have the final logo
 .navbar-logo {
+  border: 2px solid white; // TBDeleted
+  color: white; // TBDeleted
+  font-size: 1.2rem; // TBDeleted
+  padding-top: 5px; // TBDeleted
   position: absolute;
   right: 9px;
   top: 0;
