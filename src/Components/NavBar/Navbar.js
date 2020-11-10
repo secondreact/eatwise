@@ -3,8 +3,9 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
-import "./Navbar.css";
+import "./Navbar.scss";
 import { IconContext } from "react-icons";
+import Logo from "../../pages/shared/logo/logotest.png";
 
 function NavBar() {
   const [sidebar, setSidebar] = useState(false);
@@ -36,6 +37,10 @@ function NavBar() {
             })}
           </ul>
         </nav>
+        <Link to="/">
+          <div className="navbar-logo">EatWise Logo</div>
+          {/* <img className="navbar-logo" src={Logo} alt="Logo" /> */}
+        </Link>
       </IconContext.Provider>
     </div>
   );

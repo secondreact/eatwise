@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from '../Components/Footer/Footer'
+import Footer from "../Components/Footer/Footer";
 
 function AboutPage() {
   return (
@@ -8,14 +8,19 @@ function AboutPage() {
         <h2>About EatWise</h2>
         <h4>Our Values</h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor neque labore, laboriosam qui similique sapiente iste quae ullam unde aliquid quidem? Minima laudantium culpa laboriosam unde consequuntur fugit dicta voluptatum.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor neque
+          labore, laboriosam qui similique sapiente iste quae ullam unde aliquid
+          quidem? Minima laudantium culpa laboriosam unde consequuntur fugit
+          dicta voluptatum.
         </p>
         <h4>Help grow our platform</h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor neque labore, laboriosam qui similique sapiente iste quae ullam unde aliquid quidem? Minima laudantium culpa laboriosam unde consequuntur fugit dicta voluptatum.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor neque
+          labore, laboriosam qui similique sapiente iste quae ullam unde aliquid
+          quidem? Minima laudantium culpa laboriosam unde consequuntur fugit
+          dicta voluptatum.
         </p>
-        <h6> --- Testing footer component --- </h6>
-        <Footer/>
+        <Footer />
       </div>
     </div>
   );
