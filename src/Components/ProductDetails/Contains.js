@@ -19,7 +19,7 @@ export default function Contains(props) {
       {containsArray?.map((ingredient) => {
         return <li>{ingredient}</li>;
       })}
-      <h4>icons</h4>
+      {/* <h4>icons</h4>
       <EggIcon />
       <FatsIcon />
       <FishIcon />
@@ -28,7 +28,7 @@ export default function Contains(props) {
       <NutsIcon />
       <PeanutsIcon />
       <SugarIcon />
-      <VeganIcon />
+      <VeganIcon /> */}
     </div>
   );
 }
