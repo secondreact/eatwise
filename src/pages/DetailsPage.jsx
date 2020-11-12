@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import AllergensSection from "../Components/ProductDetails/AllergensSection";
-import BasicInformation from "../Components/ProductDetails/BasicInformation";
 import Contains from "../Components/ProductDetails/Contains";
-import NutrientLevels from "../Components/ProductDetails/NutrientLevels";
 
 // you can use this test product code: https://world.openfoodfacts.org/api/v0/product/3017620422003
 

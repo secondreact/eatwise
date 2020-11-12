@@ -1,6 +1,4 @@
 import React from "react";
-import AllergensSection from "./AllergensSection";
-import Contains from "./Contains";
 import "./Productdetails.css";
 
 export default function BasicInformation() {

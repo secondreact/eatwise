@@ -3,7 +3,6 @@ import "../Components/ProductResults/Productinfo.css";
 import ProductCard from "../Components/ProductResults/ProductCard";
 import Footer from "../Components/Footer/Footer";
 import Filters from "../Components/Filters/Filters";
-import SearchBarByName from "../Components/Searchbar/SearchBarByName";
 
 // API ENDPOINT: https://world.openfoodfacts.org/ https://world.openfoodfacts.org/brand/nutella/1.json
 

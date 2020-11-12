@@ -41,7 +41,10 @@ export default class Filters extends Component {
 
     if (this.state.allergens) {
       url += `action=process&tagtype_0=allergens&tag_contains_0=contains&tag_0=${this.state.allergens}&`;
+    } else if (this.state.palmOil) {
+      url += `action=process&tagtype_0=allergens&tag_contains_0=contains&tag_0=${this.state.allergens}&ingredients_from_palm_oil=without`;
     }
+
     url += `json=true`;
 
     this.props.getFilteredProducts(url);
@@ -60,7 +63,7 @@ export default class Filters extends Component {
                 value={item}
                 type="radio"
                 id={item}
-                checked={this.state.allergens == item}
+                // checked={this.state.allergens == item}
                 onChange={this.onAllergensChange}
               />
             </>
@@ -76,7 +79,7 @@ export default class Filters extends Component {
                 value={item}
                 type="radio"
                 id={item}
-                checked={this.state.palmOil == item}
+                // checked={this.state.palmOil === item}
                 onChange={this.onPalmOilChange}
               />
             </>
