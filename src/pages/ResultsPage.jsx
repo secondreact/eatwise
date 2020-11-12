@@ -105,10 +105,3 @@ export default class ResultsPage extends Component {
     );
   }
 }
-
-// REVIEW AND DEFINE CATEGORIES
-{
-  /* <div className="categories-">
-            <Categories />
-          </div> */
-}
