@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Categories from "../Components/CategoriesButtons/CategoriesButtons";
 import "../Components/ProductResults/Productinfo.css";
 import ProductCard from "../Components/ProductResults/ProductCard";
 import Footer from "../Components/Footer/Footer";
