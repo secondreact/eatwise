@@ -1,100 +1,90 @@
 import React, { Component } from "react";
+import "./Filters.scss";
 
 export default class Filters extends Component {
+  // can these variable be taken from the API as dynamic filters?
+  allergens = ["milk", "nuts", "fish", "eggs", "gluten"];
+  palmOil = ["with", "without", "indifferent"];
+
   constructor(props) {
     super(props);
     this.state = {
       allergens: "",
+      palmOil: [],
       list: [],
     };
-    this.onFilterChange = this.onFilterChange.bind(this);
-    this.filterSearch = this.filterSearch.bind(this);
-
-    console.log("Antes");
-    this.props.handleColorChange("blue");
-    console.log("Despues");
   }
 
-  onFilterChange(event) {
+  onAllergensChange = (event) => {
     this.setState({ allergens: event.target.value });
-  }
+  };
 
-  findProducts(allergens) {
-    fetch(
-      `https://world.openfoodfacts.org/cgi/search.pl?action=process&tagtype_0=allergens&tag_contains_0=contains&tag_0=${allergens}&json=true`
-    )
-      .then((data) => data.json())
-      .then((response) => {
-        // this.setState({ list: response.products });
-        this.props.handleProductUpdate(response.products);
-      });
-  }
+  onPalmOilChange = (e) => {
+    let checked = e.target.checked;
+    this.setState({ palmOil: this.state.palmOil.push(e.target.value) });
+  };
 
-  filterSearch() {
+  // findProducts(allergens) {
+  //   fetch(
+  //     `https://world.openfoodfacts.org/cgi/search.pl?action=process&tagtype_0=allergens&tag_contains_0=contains&tag_0=${allergens}&json=true`
+  //   )
+  //     .then((data) => data.json())
+  //     .then((response) => {
+  //       // this.setState({ list: response.products });
+  //       this.props.handleProductUpdate(response.products);
+  //     });
+  // }
+
+  filterSearch = () => {
     let url = `https://world.openfoodfacts.org/cgi/search.pl?`;
     // this.findProducts(this.state.allergens);
 
     if (this.state.allergens) {
       url += `action=process&tagtype_0=allergens&tag_contains_0=contains&tag_0=${this.state.allergens}&`;
     }
-
     url += `json=true`;
 
     this.props.getFilteredProducts(url);
-  }
+  };
 
   render() {
     return (
-      <div>
-        <h2>Filter options: </h2>
+      <div className="filters">
         <label>Allergens:</label>
         <br />
-        <label htmlFor="milk">Milk</label>
-        <input
-          value="milk"
-          type="radio"
-          id="milk"
-          checked={this.state.allergens == "milk"}
-          onChange={this.onFilterChange}
-        />
+        {this.allergens.map((item) => {
+          return (
+            <>
+              <label htmlFor={item}>No {item}</label>
+              <input
+                value={item}
+                type="checkbox"
+                id={item}
+                checked={this.state.allergens == item}
+                onChange={this.onAllergensChange}
+              />
+            </>
+          );
+        })}
 
-        <label htmlFor="nuts">Nuts</label>
-        <input
-          value="nuts"
-          type="radio"
-          id="nuts"
-          checked={this.state.allergens == "nuts"}
-          onChange={this.onFilterChange}
-        />
+        <h3>Contains Palm Oil</h3>
+        {this.palmOil.map((item) => {
+          return (
+            <>
+              <label htmlFor={item}>{item}</label>
+              <input
+                value={item}
+                type="radio"
+                id={item}
+                checked={this.state.palmOil == item}
+                onChange={this.onPalmOilChange}
+              />
+            </>
+          );
+        })}
 
-        <label htmlFor="gluten">Gluten</label>
-        <input
-          value="gluten"
-          type="radio"
-          id="gluten"
-          checked={this.state.allergens == "gluten"}
-          onChange={this.onFilterChange}
-        />
-
-        <label htmlFor="fish">Fish</label>
-        <input
-          value="fish"
-          type="radio"
-          id="fish"
-          checked={this.state.allergens == "fish"}
-          onChange={this.onFilterChange}
-        />
-
-        <label htmlFor="eggs">Eggs</label>
-        <input
-          value="eggs"
-          type="radio"
-          id="eggs"
-          checked={this.state.allergens == "eggs"}
-          onChange={this.onFilterChange}
-        />
-
-        <h3>Your choice: {this.state.allergens} </h3>
+        <h3>Your choice allergens: {this.state.allergens} </h3>
+        <h3>Your choice palm Oil: {this.state.palmOil} </h3>
 
         <button onClick={this.filterSearch}>Search</button>
         <>
@@ -119,3 +109,4 @@ export default class Filters extends Component {
 // en:nuts
 // en:eggs
 // en:fish
+// en:peanuts
