@@ -58,7 +58,7 @@ export default class Filters extends Component {
               <label htmlFor={item}>No {item}</label>
               <input
                 value={item}
-                type="checkbox"
+                type="radio"
                 id={item}
                 checked={this.state.allergens == item}
                 onChange={this.onAllergensChange}
@@ -110,3 +110,5 @@ export default class Filters extends Component {
 // en:eggs
 // en:fish
 // en:peanuts
+
+// &tagtype_1=nutrition_grades&tag_contains_1=contains&tag_1=A&additives=without&ingredients_from_palm_oil=without
