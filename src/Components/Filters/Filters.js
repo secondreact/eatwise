@@ -4,13 +4,13 @@ import "./Filters.scss";
 export default class Filters extends Component {
   // can these variable be taken from the API as dynamic filters?
   allergens = ["milk", "nuts", "fish", "eggs", "gluten"];
-  palmOil = ["with", "without", "indifferent"];
+  palmOil = ["with", "without"];
 
   constructor(props) {
     super(props);
     this.state = {
       allergens: "",
-      palmOil: [],
+      palmOil: "",
       list: [],
     };
   }
@@ -20,8 +20,8 @@ export default class Filters extends Component {
   };
 
   onPalmOilChange = (e) => {
-    let checked = e.target.checked;
-    this.setState({ palmOil: this.state.palmOil.push(e.target.value) });
+    // let checked = e.target.checked;
+    this.setState({ palmOil: e.target.value });
   };
 
   // findProducts(allergens) {
@@ -42,7 +42,7 @@ export default class Filters extends Component {
     if (this.state.allergens) {
       url += `action=process&tagtype_0=allergens&tag_contains_0=contains&tag_0=${this.state.allergens}&`;
     } else if (this.state.palmOil) {
-      url += `action=process&tagtype_0=allergens&tag_contains_0=contains&tag_0=${this.state.allergens}&ingredients_from_palm_oil=without`;
+      url += `action=process&tagtype_0=allergens&tag_contains_0=contains&tag_0=${this.state.allergens}&ingredients_from_palm_oil=${this.state.palmOil}`;
     }
 
     url += `json=true`;
