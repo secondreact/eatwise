@@ -27,7 +27,7 @@ export default function AllergensSection(props) {
       <Lactose />
       <Nuts />
       <Peanuts />
-      {/* <Sugar/> */}
+      <Sugar />
       {/* Sofi note: I have to fix the sugar icon */}
       <Vegan />
     </div>
