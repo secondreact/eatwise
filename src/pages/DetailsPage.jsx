@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import AllergensSection from "../Components/ProductDetails/AllergensSection";
-import Contains from "../Components/ProductDetails/Contains";
+import Contains from "../Components/ProductDetails/ContainsIngredients";
 
 // you can use this test product code: https://world.openfoodfacts.org/api/v0/product/3017620422003
 
@@ -37,8 +37,9 @@ export default class DetailsPage extends Component {
           />
           <h2>{this.state.product?.product_name}</h2>
           <h3>{this.state.product?.brands}</h3>
-          <h4>Contains test</h4>
+          <h4>This product contains</h4>
           <Contains contains={this.state.product?.ingredients_analysis_tags} />
+          <h4>Allergens Information</h4>
           <AllergensSection allergens={this.state.product?.allergens_tags} />
           {/* <NutrientLevels nutrientLevels={this.state.product?.nutrient_levels} /> */}
           {/* <BasicInformation /> */}
