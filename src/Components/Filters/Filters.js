@@ -49,26 +49,26 @@ export default class Filters extends Component {
 
   render() {
     return (
-      <div className="filters">
+      <>
         <label>Allergens:</label>
-        <br />
-        {this.allergens.map((item) => {
-          return (
-            <>
-              <label htmlFor={item}>No {item}</label>
-              <input
-                value={item}
-                type="radio"
-                id={item}
-                checked={this.state.allergens == item}
-                onChange={this.onAllergensChange}
-              />
-            </>
-          );
-        })}
+        <div className="filters">
+          {this.allergens.map((item) => {
+            return (
+              <div className="filter-input">
+                <label htmlFor={item}>No {item}</label>
+                <input
+                  value={item}
+                  type="radio"
+                  id={item}
+                  checked={this.state.allergens == item}
+                  onChange={this.onAllergensChange}
+                />
+              </div>
+            );
+          })}
 
-        <h3>Contains Palm Oil</h3>
-        {this.palmOil.map((item) => {
+          {/* <h3>Contains Palm Oil</h3> */}
+          {/* {this.palmOil.map((item) => {
           return (
             <>
               <label htmlFor={item}>{item}</label>
@@ -81,23 +81,26 @@ export default class Filters extends Component {
               />
             </>
           );
-        })}
+        })} */}
 
-        <h3>Your choice allergens: {this.state.allergens} </h3>
-        <h3>Your choice palm Oil: {this.state.palmOil} </h3>
+          <h3>Your choice allergens: {this.state.allergens} </h3>
+          {/* <h3>Your choice palm Oil: {this.state.palmOil} </h3> */}
 
-        <button onClick={this.filterSearch}>Search</button>
-        <>
-          {this.state.list?.map((item) => {
-            return (
-              <>
-                <h4>{item.product_name}</h4>
-                <p>{item.allergens}</p>
-              </>
-            );
-          })}
-        </>
-      </div>
+          <button className="search-button" onClick={this.filterSearch}>
+            Search
+          </button>
+          <>
+            {this.state.list?.map((item) => {
+              return (
+                <>
+                  <h4>{item.product_name}</h4>
+                  <p>{item.allergens}</p>
+                </>
+              );
+            })}
+          </>
+        </div>
+      </>
     );
   }
 }
