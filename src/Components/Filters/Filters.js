@@ -20,7 +20,7 @@ export default class Filters extends Component {
   };
 
   onPalmOilChange = (e) => {
-    // let checked = e.target.checked;
+    let checked = e.target.checked;
     this.setState({ palmOil: e.target.value });
   };
 
@@ -40,7 +40,7 @@ export default class Filters extends Component {
     // this.findProducts(this.state.allergens);
 
     if (this.state.allergens) {
-      url += `action=process&tagtype_0=allergens&tag_contains_0=contains&tag_0=${this.state.allergens}&`;
+      url += `action=process&tagtype_0=allergens&tag_contains_0=does_not_contain&tag_0=${this.state.allergens}&`;
     }
     url += `json=true`;
 
@@ -60,7 +60,7 @@ export default class Filters extends Component {
                 value={item}
                 type="radio"
                 id={item}
-                // checked={this.state.allergens == item}
+                checked={this.state.allergens == item}
                 onChange={this.onAllergensChange}
               />
             </>
