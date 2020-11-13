@@ -1,11 +1,12 @@
 .main-product-info {
-  display: flex;
-  background-color: whitesmoke;
-  border: solid 1px red;
-  width: 100%;
+  width: 80%;
   height: fit-content;
   padding: 10px;
+  margin: 0 auto 10px;
   box-sizing: border-box;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 10px 10px 20px -15px rgba(117, 116, 117, 0.65);
 }
 
 .image-section {
@@ -29,14 +30,18 @@
   flex-direction: column;
 }
 
-.allergens-section {
+.icons-section {
   display: inline-flex;
+  margin: 0 auto;
 }
 
-.allergen-icon {
-  margin: 5px 8px;
+.detailpage-icon {
+  margin: 2px;
 }
 
+.nutrient-levels li {
+  list-style: none;
+}
 /* this CSS is just to identify the items - it will be changed */
 /* div{
   border-bottom: solid 0.5px lightgray;
@@ -61,4 +66,8 @@
   width: 80px;
   height: 100px;
   margin: 5px;
+}
+
+h4 {
+  color: #b94f4d;
 }

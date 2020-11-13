@@ -1,9 +1,9 @@
-/* .root{
-  --bittersweet: #ff6461ff;
+.root {
+  --main-color: #ff6461;
   --medium-sea-green: #44af69ff;
   --blue-munsell: #2b9eb3ff;
   --honey-yellow: #ffb30fff;
-} */
+}
 
 body {
   margin: 0;

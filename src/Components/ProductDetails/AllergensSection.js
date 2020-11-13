@@ -22,13 +22,16 @@ export default function AllergensSection(props) {
     .set("en:fish", <Fish />);
 
   return (
-    <div className="allergens-section">
-      {allergensList?.map((allergen) => {
-        return (
-          <div className="allergen-icon">{allergensMap.get(allergen)}</div>
-        );
-      })}
-    </div>
+    <>
+      <h4>Allergens Information</h4>
+      <div className="icons-section">
+        {allergensList?.map((allergen) => {
+          return (
+            <div className="detailpage-icon">{allergensMap.get(allergen)}</div>
+          );
+        })}
+      </div>
+    </>
   );
 }
 
