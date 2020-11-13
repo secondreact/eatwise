@@ -16,6 +16,12 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
+    title: "Favorites",
+    path: "/favorites",
+    icon: <AiIcons.AiTwotoneHeart />,
+    cName: "nav-text",
+  },
+  {
     title: "About",
     path: "/about",
     icon: <FaIcons.FaAppleAlt />,

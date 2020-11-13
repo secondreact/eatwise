@@ -41,10 +41,7 @@ export default class Filters extends Component {
 
     if (this.state.allergens) {
       url += `action=process&tagtype_0=allergens&tag_contains_0=contains&tag_0=${this.state.allergens}&`;
-    } else if (this.state.palmOil) {
-      url += `action=process&tagtype_0=allergens&tag_contains_0=contains&tag_0=${this.state.allergens}&ingredients_from_palm_oil=${this.state.palmOil}`;
     }
-
     url += `json=true`;
 
     this.props.getFilteredProducts(url);
