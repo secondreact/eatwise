@@ -7,7 +7,7 @@
 
 body {
   margin: 0;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -28,9 +28,9 @@ code {
   display: inline-block;
 }
 
-.details-image{
+.details-image {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  object-fit: contain;
 }
-

@@ -1,4 +1,4 @@
-.main-product-info{
+.main-product-info {
   display: flex;
   background-color: whitesmoke;
   border: solid 1px red;
@@ -7,15 +7,15 @@
   padding: 10px;
   box-sizing: border-box;
 }
-  
-.image-section{
+
+.image-section {
   background-color: lavender;
   border: solid 1px blue;
   width: 40%;
   margin-right: 20px;
 }
 
-.product-images{
+.product-images {
   background-image: url(https://tinyurl.com/y323okpr);
   background-repeat: round;
   border: solid 1px gray;
@@ -25,8 +25,16 @@
   margin-top: 15px;
 }
 
-.main-data{
+.main-data {
   flex-direction: column;
+}
+
+.allergens-section {
+  display: inline-flex;
+}
+
+.allergen-icon {
+  margin: 5px 8px;
 }
 
 /* this CSS is just to identify the items - it will be changed */
@@ -34,29 +42,21 @@
   border-bottom: solid 0.5px lightgray;
 } */
 
-.secondary-info{
+.secondary-info {
   padding: 10px;
-  text-align:left;
+  text-align: left;
   font-size: 12px;
 }
 
-.contents-icon{
-  background-color: #DBFF75;
+.contents-icon {
+  background-color: #dbff75;
   border-radius: 50%;
   width: 50px;
   height: 50px;
   text-align: center;
 }
 
-.allergens-icon{
-  background-color: #FF6461;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-}
-
-.novascore p:nth-child(2){
+.novascore p:nth-child(2) {
   background-color: lightslategray;
   width: 80px;
   height: 100px;
