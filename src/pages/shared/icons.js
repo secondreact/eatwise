@@ -18,4 +18,4 @@ export { ReactComponent as Nuts } from "../../icons/contains-red/nuts-red.svg";
 export { ReactComponent as Peanuts } from "../../icons/contains-red/peanuts-red.svg";
 export { ReactComponent as Sugar } from "../../icons/contains-red/sugar-red.svg";
 export { ReactComponent as Vegan } from "../../icons/contains-red/vegan-red.svg";
-
+export { ReactComponent as NonVegan } from "../../icons/contains-red/Non-vegan.svg";

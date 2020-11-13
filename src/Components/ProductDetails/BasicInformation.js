@@ -4,28 +4,6 @@ import "./Productdetails.css";
 export default function BasicInformation() {
   return (
     <div>
-      {/* <div className="main-product-info">
-        <div className="image-section"> */}
-      {/* <img className="product-images" alt="ritter"/> */}
-      {/* </div>
-        <div className="main-data">
-          <h2>Haribo Saft Goldbears</h2>
-          <h3>Mondelez-international</h3>
-        </div>
-      </div> */}
-      <div className="secondary-info">
-        {/* <div className="contains-data">
-          <h5>This product contains</h5>
-          <Contains />
-        </div> */}
-        <div className="allergens-data">
-          {/* <h5>Allergens Information</h5> */}
-          {/* <AllergensSection /> */}
-        </div>
-        <h3>
-          !! -- The data below is just there as a placeholder it will be
-          replaced with the product fetched data
-        </h3>
         <div className="ingredients-data">
           <h5>Ingredients</h5>
           <p>
