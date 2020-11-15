@@ -1,0 +1,36 @@
+/* Social media icons */
+footer {
+  position: static;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.social-container {
+  bottom: 0;
+  padding: 10px;
+  width: 400px;
+  margin: auto;
+}
+
+a.social {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block;
+}
+
+a.social:hover {
+  transform: translateY(-2px);
+}
+
+a.twitter,
+a.facebook,
+a.instagram {
+  color: #ff6461;
+  padding: 3px;
+}
+
+.powered-text {
+  font-size: 0.7rem;
+  color: #df5856;
+}

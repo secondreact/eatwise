@@ -1,0 +1,42 @@
+* {
+  font-family: inherit;
+}
+.buttons-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  /* border: solid 1px gray; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  /* margin-top: 95px; */
+}
+
+.category-button {
+  cursor: pointer;
+  background-color: #efeeee;
+  color: #4a4949;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin: 5px;
+  width: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.category-button:hover {
+  background-color: #ff6461;
+  color: white;
+}
+
+.button-selected {
+  cursor: pointer;
+  background-color: #ff6461;
+  color: white;
+  padding: 8px 10px;
+  width: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+}

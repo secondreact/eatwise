@@ -1,12 +1,11 @@
-import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import React from "react";
 import "./App.css";
-import MyRoute from "./Routs";
+import Routes from "./Routes";
 
 function App() {
   return (
     <div className="App">
-      <MyRoute />
+      <Routes />
     </div>
   );
 }

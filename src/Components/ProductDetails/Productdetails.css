@@ -1,0 +1,73 @@
+.main-product-info {
+  width: 80%;
+  height: fit-content;
+  padding: 10px;
+  margin: 0 auto 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 10px 10px 20px -15px rgba(117, 116, 117, 0.65);
+}
+
+.image-section {
+  background-color: lavender;
+  border: solid 1px blue;
+  width: 40%;
+  margin-right: 20px;
+}
+
+.product-images {
+  background-image: url(https://tinyurl.com/y323okpr);
+  background-repeat: round;
+  border: solid 1px gray;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-top: 15px;
+}
+
+.main-data {
+  flex-direction: column;
+}
+
+.icons-section {
+  display: inline-flex;
+  margin: 0 auto;
+}
+
+.detailpage-icon {
+  margin: 2px;
+}
+
+.nutrient-levels li {
+  list-style: none;
+}
+/* this CSS is just to identify the items - it will be changed */
+/* div{
+  border-bottom: solid 0.5px lightgray;
+} */
+
+.secondary-info {
+  padding: 10px;
+  text-align: left;
+  font-size: 12px;
+}
+
+.contents-icon {
+  background-color: #dbff75;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+.novascore p:nth-child(2) {
+  background-color: lightslategray;
+  width: 80px;
+  height: 100px;
+  margin: 5px;
+}
+
+h4 {
+  color: #b94f4d;
+}

@@ -1,0 +1,97 @@
+.navbar {
+  background-color: #ff6461;
+  /* border: 3px solid blue; */
+  height: 3.3rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+  .fix-search & {
+    border: 5px solid green;
+    background: #eee;
+  }
+}
+
+.menu-bars {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  font-size: 2rem;
+  background: none;
+}
+
+.nav-menu {
+  background-color: #ff6461;
+  width: 230px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: -16px;
+  left: -100%;
+  transition: 350ms;
+}
+
+.nav-menu.active {
+  top: -16px;
+  left: -40px;
+  transition: 350ms;
+}
+
+.nav-text {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 8px 0px 8px 10px;
+  list-style: none;
+  height: 60px;
+}
+
+.nav-text a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 4px;
+}
+
+.nav-text a:hover {
+  background-color: #dc4c4a;
+}
+
+.nav-menu-items {
+  width: 100%;
+}
+
+.navbar-toggle {
+  background-color: #dc4c4a;
+  width: 100%;
+  height: 3.1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+span {
+  margin-left: 16px;
+}
+
+// this will be deleted once we have the final logo
+.navbar-logo {
+  // border: 2px solid white; // TBDeleted
+  // color: white; // TBDeleted
+  // font-size: 1.2rem; // TBDeleted
+  // padding-top: 5px; // TBDeleted
+  position: absolute;
+  right: 9px;
+  top: 0;
+  width: 8.5rem;
+  height: 3.3rem;
+}
