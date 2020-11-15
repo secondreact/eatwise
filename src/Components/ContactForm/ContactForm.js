@@ -13,6 +13,7 @@ export default function ContactForm() {
         <textarea name="comment" id="1">
           Enter your message here...
         </textarea>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
