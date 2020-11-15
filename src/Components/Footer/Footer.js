@@ -21,7 +21,8 @@ export default function Footer() {
           <FontAwesomeIcon icon={faInstagram} size="2x" />
         </a>
       </div>
-      <p className="powered-text">Powered by Sofia & Omar</p>
+      {/* <p className="powered-text">Powered by Sofia & Omar</p> */}
+      <p className="powered-text">EatWise | Eat healthy and safely</p>
     </footer>
   );
 }
