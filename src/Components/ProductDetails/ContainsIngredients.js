@@ -1,14 +1,14 @@
 import React from "react";
 import {
-  EggIcon,
-  FishIcon,
+  // EggIcon,
+  // FishIcon,
   FatsIcon,
-  GlutenIcon,
-  LactoseIcon,
-  NutsIcon,
-  PeanutsIcon,
-  SugarIcon,
-  VeganIcon,
+  // GlutenIcon,
+  // LactoseIcon,
+  // NutsIcon,
+  // PeanutsIcon,
+  // SugarIcon,
+  // VeganIcon,
   NonVegan,
 } from "../../pages/shared/icons";
 

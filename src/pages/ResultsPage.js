@@ -41,11 +41,6 @@ export default class ResultsPage extends Component {
     this.loadProducts(this.state.query);
   };
 
-  handleProductUpdate = (products) => {
-    console.log("updating products, got " + products.length + " products");
-    this.setState({ products: products });
-  };
-
   // Version v2.0
   getFilteredProducts = (url) => {
     fetch(url)
@@ -69,23 +64,28 @@ export default class ResultsPage extends Component {
             onClick={this.searchProducts}
           /> */}
           <div className="search">
-            <h3>Find products by name:</h3>
+            {/* Move it to filters component'.' */}
             <input
               className="search-bar"
               onChange={this.queryChange}
               type="text"
               placeholder="Find products"
+              onKeyPress={(event) => {
+                if (event.key === "Enter") {
+                  alert("s");
+                }
+              }}
             ></input>
+
+            {/* <h3>Find products by name:</h3>
+            
             <button className="search-button" onClick={this.searchProducts}>
               Search
-            </button>
+            </button> */}
           </div>
           <div className="filters-section">
             <h4>Filter products by category:</h4>
-            <Filters
-              handleProductUpdate={this.handleProductUpdate}
-              getFilteredProducts={this.getFilteredProducts}
-            />
+            <Filters getFilteredProducts={this.getFilteredProducts} />
           </div>
           <div className="results-list">
             {this.state.products.map((item) => {
