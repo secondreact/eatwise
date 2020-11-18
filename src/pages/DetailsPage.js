@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import AllergensSection from "../Components/ProductDetails/AllergensSection";
 import Contains from "../Components/ProductDetails/ContainsIngredients";
 import NutrientLevels from "../Components/ProductDetails/NutrientLevels";
+import ProductCard from "../Components/ProductResults/ProductCard";
 import "../Components/ProductDetails/Productdetails.scss";
 import PlaceholderImage from "../pages/shared/general_images/camera.svg";
 
@@ -32,9 +33,16 @@ export default class DetailsPage extends Component {
     return (
       <div>
         <div>
-          <h3>Details Page test</h3>
+          <h3>Product Information</h3>
           <div className="main-product-info">
-            <div>
+            <ProductCard
+              code={this.state.product?.code}
+              image={this.state.product?.image_front_url}
+              productName={this.state.product?.product_name}
+              brand={this.state.product?.brands}
+            />
+
+            {/* <div>
               {this.state.product?.image_front_url ? (
                 <img
                   className="details-image"
@@ -56,7 +64,7 @@ export default class DetailsPage extends Component {
             </div>
 
             <h2>{this.state.product?.product_name}</h2>
-            <p>{this.state.product?.brands}</p>
+            <p>{this.state.product?.brands}</p> */}
           </div>
           <div className="main-product-info">
             <Contains
