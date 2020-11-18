@@ -10,6 +10,7 @@ export default function Favorites() {
         <img
           style={{ width: "200px" }}
           src="https://www.flaticon.com/svg/static/icons/svg/1717/1717466.svg"
+          alt="No favorites yet"
         />
       </div>
       <Footer />

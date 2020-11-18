@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Filters.scss";
 
 export default class Filters extends Component {
-  // can these variable be taken from the API as dynamic filters?
   allergens = ["milk", "nuts", "fish", "eggs", "gluten"];
   palmOil = ["with", "without"];
 
@@ -52,15 +51,16 @@ export default class Filters extends Component {
       <>
         <label>Allergens:</label>
         <div className="filters">
-          {this.allergens.map((item) => {
+          {this.allergens.map((item, index) => {
             return (
-              <div className="filter-input">
+              <div key={index} className="filter-input">
                 <label htmlFor={item}>No {item}</label>
                 <input
                   value={item}
                   type="radio"
                   id={item}
-                  checked={this.state.allergens == item}
+                  // !! this is triggering a warning
+                  checked={this.state.allergens === item}
                   onChange={this.onAllergensChange}
                 />
               </div>
@@ -90,12 +90,12 @@ export default class Filters extends Component {
             Search
           </button>
           <>
-            {this.state.list?.map((item) => {
+            {this.state.list?.map((item, index) => {
               return (
-                <>
+                <div key={index}>
                   <h4>{item.product_name}</h4>
                   <p>{item.allergens}</p>
-                </>
+                </div>
               );
             })}
           </>
