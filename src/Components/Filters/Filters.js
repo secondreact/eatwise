@@ -44,9 +44,9 @@ export default class Filters extends Component {
       <>
         <label>Allergens:</label>
         <div className="filters">
-          {this.listOfAllergens.map((item) => {
+          {this.listOfAllergens.map((item, i) => {
             return (
-              <div className="filter-input">
+              <div key={i} className="filter-input">
                 <label htmlFor={item}>No {item}</label>
                 <input
                   value={item}
@@ -60,9 +60,9 @@ export default class Filters extends Component {
           })}
 
           <h3>Contains Palm Oil</h3>
-          {this.palmOilOptions.map((item) => {
+          {this.palmOilOptions.map((item, i) => {
             return (
-              <>
+              <div key={i}>
                 <label htmlFor={item}>{item}</label>
                 <input
                   value={item}
@@ -71,7 +71,7 @@ export default class Filters extends Component {
                   checked={this.state.palmOil === item}
                   onChange={this.onPalmOilChange}
                 />
-              </>
+              </div>
             );
           })}
 
@@ -82,12 +82,12 @@ export default class Filters extends Component {
             Search
           </button>
           <>
-            {this.state.list?.map((item) => {
+            {this.state.list?.map((item, index) => {
               return (
-                <>
+                <div key={index}>
                   <h4>{item.product_name}</h4>
                   <p>{item.allergens}</p>
-                </>
+                </div>
               );
             })}
           </>

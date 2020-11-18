@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../Components/ProductResults/Productinfo.css";
-import "../Components/Searchbar/Searchbar.scss";
+// import "../Components/Searchbar/Searchbar.scss";
 import ProductCard from "../Components/ProductResults/ProductCard";
 import Footer from "../Components/Footer/Footer";
 import Filters from "../Components/Filters/Filters";
@@ -58,11 +58,6 @@ export default class ResultsPage extends Component {
     return (
       <div>
         <div>
-          {/* version 3 test separate searchbar component  */}
-          {/* <SearchBarByName
-            onChange={this.queryChange}
-            onClick={this.searchProducts}
-          /> */}
           <div className="search">
             {/* Move it to filters component'.' */}
             <input
@@ -72,7 +67,7 @@ export default class ResultsPage extends Component {
               placeholder="Find products"
               onKeyPress={(event) => {
                 if (event.key === "Enter") {
-                  alert("s");
+                  console.log(event.target.value);
                 }
               }}
             ></input>
