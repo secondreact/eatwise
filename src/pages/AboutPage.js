@@ -1,7 +1,6 @@
 import React from "react";
 import ContactForm from "../Components/ContactForm/ContactForm";
 import Footer from "../Components/Footer/Footer";
-import ProductCard from "../Components/ProductResults/ProductCard";
 
 function AboutPage() {
   return (

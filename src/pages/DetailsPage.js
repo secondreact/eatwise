@@ -4,7 +4,6 @@ import Contains from "../Components/ProductDetails/ContainsIngredients";
 import NutrientLevels from "../Components/ProductDetails/NutrientLevels";
 import ProductCard from "../Components/ProductResults/ProductCard";
 import "../Components/ProductDetails/Productdetails.scss";
-import PlaceholderImage from "../pages/shared/general_images/camera.svg";
 
 // you can use this test product code: https://world.openfoodfacts.org/api/v0/product/3017620422003
 
@@ -41,30 +40,6 @@ export default class DetailsPage extends Component {
               productName={this.state.product?.product_name}
               brand={this.state.product?.brands}
             />
-
-            {/* <div>
-              {this.state.product?.image_front_url ? (
-                <img
-                  className="details-image"
-                  src={this.state.product?.image_front_url}
-                  alt={`${this.state.product?.product_name}`}
-                />
-              ) : (
-                <div className="container">
-                  <img
-                    className="product-image"
-                    src={PlaceholderImage}
-                    alt="No image found"
-                  />
-                  <div className="placeholder-text">
-                    <p>No image found</p>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <h2>{this.state.product?.product_name}</h2>
-            <p>{this.state.product?.brands}</p> */}
           </div>
           <div className="main-product-info">
             <Contains
