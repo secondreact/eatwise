@@ -1,5 +1,5 @@
 import React from "react";
-import "./Productdetails.css";
+import "./Productdetails.scss";
 
 export default function BasicInformation() {
   return (

@@ -7,7 +7,7 @@ import {
   Nuts,
   Peanuts,
 } from "../../pages/shared/icons";
-import "../ProductDetails/Productdetails.css";
+import "../ProductDetails/Productdetails.scss";
 
 export default function AllergensSection(props) {
   let allergensList = props.allergens;

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../Components/ProductResults/Productinfo.css";
-import "../Components/Searchbar/Searchbar.scss";
 import ProductCard from "../Components/ProductResults/ProductCard";
 import Footer from "../Components/Footer/Footer";
 import Filters from "../Components/Filters/Filters";
@@ -11,37 +10,10 @@ export default class ResultsPage extends Component {
   constructor() {
     super();
     this.state = {
-      query: "",
       products: [],
     };
   }
-
-  loadProducts(productName) {
-    fetch(
-      `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${productName}&search_simple=1&json=true`
-    )
-      .then((data) => data.json())
-      .then((response) => {
-        this.setState({ products: response.products });
-      })
-      .catch((error) => {
-        console.error("Found an error!", error);
-      });
-  }
-
-  componentDidMount() {
-    // this.loadProducts(this.state.query);
-  }
-
-  queryChange = (event) => {
-    this.setState({ query: event.target.value });
-  };
-
-  searchProducts = () => {
-    this.loadProducts(this.state.query);
-  };
-
-  // Version v2.0
+  // Gets URL from Filters component
   getFilteredProducts = (url) => {
     fetch(url)
       .then((data) => data.json())
@@ -52,39 +24,13 @@ export default class ResultsPage extends Component {
         console.error("Found an error!", error);
       });
   };
-  // End Version v2.0
 
   render() {
     return (
       <div>
         <div>
-          {/* version 3 test separate searchbar component  */}
-          {/* <SearchBarByName
-            onChange={this.queryChange}
-            onClick={this.searchProducts}
-          /> */}
-          <div className="search">
-            {/* Move it to filters component'.' */}
-            <input
-              className="search-bar"
-              onChange={this.queryChange}
-              type="text"
-              placeholder="Find products"
-              onKeyPress={(event) => {
-                if (event.key === "Enter") {
-                  alert("s");
-                }
-              }}
-            ></input>
-
-            {/* <h3>Find products by name:</h3>
-            
-            <button className="search-button" onClick={this.searchProducts}>
-              Search
-            </button> */}
-          </div>
+          <h2>Explore Products</h2>
           <div className="filters-section">
-            <h4>Filter products by category:</h4>
             <Filters getFilteredProducts={this.getFilteredProducts} />
           </div>
           <div className="results-list">
