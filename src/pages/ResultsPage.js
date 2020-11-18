@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../Components/ProductResults/Productinfo.css";
+import "../Components/ProductResults/Productinfo.scss";
 import ProductCard from "../Components/ProductResults/ProductCard";
 import Footer from "../Components/Footer/Footer";
 import Filters from "../Components/Filters/Filters";

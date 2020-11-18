@@ -1,6 +1,6 @@
 import React from "react";
 import PlaceholderImage from "../../pages/shared/general_images/camera.svg";
-import "./Productinfo.css";
+import "./Productinfo.scss";
 
 function ProductCard(props) {
   return (
