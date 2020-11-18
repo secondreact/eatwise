@@ -13,7 +13,6 @@ export default class ResultsPage extends Component {
       products: [],
     };
   }
-
   // Gets URL from Filters component
   getFilteredProducts = (url) => {
     fetch(url)

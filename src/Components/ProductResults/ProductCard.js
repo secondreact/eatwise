@@ -4,30 +4,32 @@ import "./Productinfo.css";
 
 function ProductCard(props) {
   return (
-    <a href={"./details/" + props.code}>
-      <div>
-        {props.image ? (
-          <img
-            className="product-image"
-            src={props.image}
-            alt={props.productName}
-          />
-        ) : (
-          <div className="container">
+    <div className="product-card">
+      <a href={"./details/" + props.code}>
+        <div>
+          {props.image ? (
             <img
               className="product-image"
-              src={PlaceholderImage}
-              alt="Image not found"
+              src={props.image}
+              alt={props.productName}
             />
-            <div className="placeholder-text">
-              <p>No image found</p>
+          ) : (
+            <div className="container">
+              <img
+                className="product-image"
+                src={PlaceholderImage}
+                alt="No image found"
+              />
+              <div className="placeholder-text">
+                <p>No image found</p>
+              </div>
             </div>
-          </div>
-        )}
-      </div>
-      <h2 className="product-header">{props.productName}</h2>
-      <p>{props.brand}</p>
-    </a>
+          )}
+        </div>
+        <h2 className="product-header">{props.productName}</h2>
+        <p>{props.brand}</p>
+      </a>
+    </div>
   );
 }
 
