@@ -1,6 +1,6 @@
 import React from "react";
 import PlaceholderImage from "../../pages/shared/general_images/camera.svg";
-import "./Productinfo.css";
+import "./Productinfo.scss";
 
 function ProductCard(props) {
   return (
@@ -18,7 +18,7 @@ function ProductCard(props) {
               <img
                 className="product-image"
                 src={PlaceholderImage}
-                alt="No image found"
+                alt={props.productName}
               />
               <div className="placeholder-text">
                 <p>No image found</p>
