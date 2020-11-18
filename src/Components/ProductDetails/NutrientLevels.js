@@ -12,67 +12,19 @@ export default function NutrientLevels(props) {
       <h4>Nutrient Facts</h4>
       <li>
         <strong>Fat: </strong>
-        <div
-          className={
-            Fat === "high"
-              ? "nutrient-fact high"
-              : Fat === "medium"
-              ? "nutrient-fact medium"
-              : Fat === "low"
-              ? "nutrient-fact low"
-              : "nutrient-fact"
-          }
-        >
-          {Fat}
-        </div>
+        <div className={`nutrient-fact ${Fat}`}>{Fat}</div>
       </li>
       <li>
         <strong>Saturated Fat: </strong>
-        <div
-          className={
-            SatFat === "high"
-              ? "nutrient-fact high"
-              : SatFat === "medium"
-              ? "nutrient-fact medium"
-              : SatFat === "low"
-              ? "nutrient-fact low"
-              : "nutrient-fact"
-          }
-        >
-          {SatFat}
-        </div>
+        <div className={`nutrient-fact ${SatFat}`}>{SatFat}</div>
       </li>
       <li>
         <strong>Sugars: </strong>
-        <div
-          className={
-            Sugar === "high"
-              ? "nutrient-fact high"
-              : Sugar === "medium"
-              ? "nutrient-fact medium"
-              : Sugar === "low"
-              ? "nutrient-fact low"
-              : "nutrient-fact"
-          }
-        >
-          {Sugar}
-        </div>
+        <div className={`nutrient-fact ${Sugar}`}>{Sugar}</div>
       </li>
       <li>
         <strong>Salt: </strong>
-        <div
-          className={
-            Salt === "high"
-              ? "nutrient-fact high"
-              : Salt === "medium"
-              ? "nutrient-fact medium"
-              : Salt === "low"
-              ? "nutrient-fact low"
-              : "nutrient-fact"
-          }
-        >
-          {Salt}
-        </div>
+        <div className={`nutrient-fact ${Salt}`}>{Salt}</div>
       </li>
     </div>
   );

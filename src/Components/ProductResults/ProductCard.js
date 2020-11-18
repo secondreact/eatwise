@@ -17,7 +17,7 @@ function ProductCard(props) {
             <img
               className="product-image"
               src={PlaceholderImage}
-              alt="No image found"
+              alt="Image not found"
             />
             <div className="placeholder-text">
               <p>No image found</p>

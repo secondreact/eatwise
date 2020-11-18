@@ -8,11 +8,20 @@ export default class Filters extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      query: "",
       allergens: "",
       palmOil: "without",
       list: [],
     };
   }
+
+  queryChange = (event) => {
+    this.setState({ query: event.target.value });
+  };
+
+  searchProducts = () => {
+    this.filterSearch(this.state.query);
+  };
 
   onAllergensChange = (event) => {
     this.setState({ allergens: event.target.value });
@@ -22,8 +31,8 @@ export default class Filters extends Component {
     this.setState({ palmOil: event.target.value });
   };
 
-  filterSearch = () => {
-    let url = `https://world.openfoodfacts.org/cgi/search.pl?action=process&search_terms=Nutella&search_simple=1`;
+  filterSearch = (productName) => {
+    let url = `https://world.openfoodfacts.org/cgi/search.pl?action=process&search_terms=${productName}&search_simple=1`;
     // this.findProducts(this.state.allergens);
     //Arreglar el content del URL
 
@@ -43,39 +52,58 @@ export default class Filters extends Component {
   render() {
     return (
       <>
-        <label>Allergens:</label>
-        <div className="filters">
-          {this.listOfAllergens.map((item, i) => {
-            return (
-              <div key={i} className="filter-input">
-                <label htmlFor={item}>No {item}</label>
-                <input
-                  value={item}
-                  type="radio"
-                  key={item}
-                  checked={this.state.allergens === item}
-                  onChange={this.onAllergensChange}
-                />
-              </div>
-            );
-          })}
+        <h3>Find products by name:</h3>
+        <div className="search">
+          <input
+            className="search-bar"
+            onChange={this.queryChange}
+            type="text"
+            placeholder="Find products"
+            onKeyPress={(event) => {
+              if (event.key === "Enter") {
+                this.searchProducts();
+              }
+            }}
+          ></input>
+          <button className="search-button" onClick={this.searchProducts}>
+            Search
+          </button>
+        </div>
+        <div className="filters-section">
+          <h4>Filter products by category:</h4>
+          <label>Allergens:</label>
+          <div className="filters">
+            {this.listOfAllergens.map((item, i) => {
+              return (
+                <div key={i} className="filter-input">
+                  <label htmlFor={item}>No {item}</label>
+                  <input
+                    value={item}
+                    type="radio"
+                    key={item}
+                    checked={this.state.allergens === item}
+                    onChange={this.onAllergensChange}
+                  />
+                </div>
+              );
+            })}
 
-          <h3>Contains Palm Oil</h3>
-          {this.palmOilOptions.map((item, i) => {
-            return (
-              <div key={i}>
-                <label htmlFor={item}>{item}</label>
-                <input
-                  value={item}
-                  type="radio"
-                  id={item}
-                  checked={this.state.palmOil === item}
-                  onChange={this.onPalmOilChange}
-                />
-              </div>
-            );
-          })}
-
+            <h3>Contains Palm Oil</h3>
+            {this.palmOilOptions.map((item, i) => {
+              return (
+                <div key={i}>
+                  <label htmlFor={item}>{item}</label>
+                  <input
+                    value={item}
+                    type="radio"
+                    id={item}
+                    checked={this.state.palmOil === item}
+                    onChange={this.onPalmOilChange}
+                  />
+                </div>
+              );
+            })}
+          </div>
           <h3>Your choice allergens: {this.state.allergens} </h3>
           {/* <h3>Your choice palm Oil: {this.state.palmOil} </h3> */}
 
