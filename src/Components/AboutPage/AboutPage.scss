@@ -17,3 +17,8 @@
     padding-right: 10px;
   }
 }
+@media (max-width: 767px) {
+  .about-section {
+    flex-direction: column;
+  }
+}

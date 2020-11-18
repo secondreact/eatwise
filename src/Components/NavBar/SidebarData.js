@@ -9,12 +9,12 @@ export const SidebarData = [
     icon: <AiIcons.AiOutlineUnorderedList />,
     cName: "nav-text",
   },
-  // {
-  //   title: "Details",
-  //   path: "/details",
-  //   icon: <FaIcons.FaCookieBite />,
-  //   cName: "nav-text",
-  // },
+  {
+    title: "Details",
+    path: "/details",
+    icon: <FaIcons.FaCookieBite />,
+    cName: "nav-text",
+  },
   {
     title: "Favorites",
     path: "/favorites",
