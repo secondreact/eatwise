@@ -71,3 +71,27 @@
 h4 {
   color: #b94f4d;
 }
+
+// Styles Nutrient levels
+.nutrient-fact {
+  margin: 0 auto;
+  width: 100px;
+  padding: 5px;
+  border: solid 1px blue;
+  border-radius: 30px;
+  background-color: gray;
+  color: white;
+  font-weight: 600;
+  &.fat {
+    background-color: #ffb30fff;
+  }
+  &.saturated-fat {
+    background-color: #b94f4d;
+  }
+  &.sugars {
+    background-color: #2b9eb3ff;
+  }
+  &.salt {
+    background-color: #44af69ff;
+  }
+}
