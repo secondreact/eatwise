@@ -10,9 +10,11 @@ export default function ContactForm() {
         <label>Email:</label>
         <input type="email" placeholder="type your email here" />
         <label>Your message:</label>
-        <textarea name="comment" id="1">
-          Enter your message here...
-        </textarea>
+        <textarea
+          name="comment"
+          id="1"
+          placeholder="Enter your message here..."
+        ></textarea>
         <button type="submit">Submit</button>
       </form>
     </div>
