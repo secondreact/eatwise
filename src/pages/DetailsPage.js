@@ -4,6 +4,10 @@ import Contains from "../Components/ProductDetails/ContainsIngredients";
 import NutrientLevels from "../Components/ProductDetails/NutrientLevels";
 import "../Components/ProductDetails/Productdetails.css";
 import { IngredientsContainer, IngredientsTable } from '../Components/Ingredients/IngredientsElements'
+import ProductCard from "../Components/ProductResults/ProductCard";
+import "../Components/ProductDetails/Productdetails.scss";
+// you can use this test product code: https://world.openfoodfacts.org/api/v0/product/3017620422003
+
 
 export default class DetailsPage extends Component {
   constructor(props) {
@@ -67,17 +71,17 @@ export default class DetailsPage extends Component {
     })
     return (
       <div>
-        <div>
+        <div> ingeridients-added
           <div>categories_tags: {CatTag}</div>
           <h3>Details Page test</h3>
+          <h3>Product Information</h3>
           <div className="main-product-info">
-            <img
-              className="details-image"
-              src={this.state.product?.image_front_url}
-              alt={`${this.state.product?.product_name}`}
+            <ProductCard
+              code={this.state.product?.code}
+              image={this.state.product?.image_front_url}
+              productName={this.state.product?.product_name}
+              brand={this.state.product?.brands}
             />
-            <h2>{this.state.product?.product_name}</h2>
-            <p>{this.state.product?.brands}</p>
           </div>
           <div className="main-product-info">
             <Contains

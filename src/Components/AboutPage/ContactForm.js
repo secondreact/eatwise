@@ -5,7 +5,7 @@ export default function ContactForm() {
   return (
     <div>
       <form>
-        <label>Name:</label>
+        <label htmlFor="name">Name:</label>
         <input type="text" placeholder="type your name here" />
         <label>Email:</label>
         <input type="email" placeholder="type your email here" />

@@ -39,8 +39,13 @@
   margin: 2px;
 }
 
-.nutrient-levels li {
-  list-style: none;
+.nutrient-levels {
+  width: 20%;
+  margin: 0 auto;
+  li {
+    list-style: none;
+    margin: 5px;
+  }
 }
 /* this CSS is just to identify the items - it will be changed */
 /* div{
@@ -70,4 +75,25 @@
 
 h4 {
   color: #b94f4d;
+}
+
+// Styles Nutrient levels
+.nutrient-fact {
+  display: inline-block;
+  width: 4.3rem;
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 800;
+  text-align: center;
+  &.high {
+    background-color: #ff4b3a;
+  }
+  &.moderate {
+    background-color: #efb60e;
+  }
+  &.low {
+    background-color: #39b54a;
+  }
 }

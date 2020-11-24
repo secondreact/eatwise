@@ -2,4 +2,8 @@
   text-align: center;
 }
 
-/* test */
+@-ms-viewport {
+  width: device-width;
+}
+
+/* Resource for responsive pages https://css-tricks.com/snippets/html/responsive-meta-tag/ */

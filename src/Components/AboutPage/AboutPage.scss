@@ -1,0 +1,24 @@
+.about-section {
+  display: flex;
+  text-align: left;
+  width: 80%;
+  height: fit-content;
+  padding: 10px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 10px 10px 20px -15px rgba(117, 116, 117, 0.65);
+  img {
+    justify-content: flex-start;
+    width: 400px;
+  }
+  .about-content {
+    justify-content: flex-end;
+    padding-right: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .about-section {
+    flex-direction: column;
+  }
+}
