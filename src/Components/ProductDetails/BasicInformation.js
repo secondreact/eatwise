@@ -1,3 +1,5 @@
+// THIS COMPONENT IS NOT USED it is a guide to build the details page
+
 import React from "react";
 import "./Productdetails.scss";
 

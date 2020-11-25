@@ -11,19 +11,19 @@ export default function NutrientLevels(props) {
     <div className="nutrient-levels">
       <h4>Nutrient Facts</h4>
       <li>
-        <strong>Fat: </strong>
+        <p>Fat:</p>
         <div className={`nutrient-fact ${Fat}`}>{Fat}</div>
       </li>
       <li>
-        <strong>Saturated Fat: </strong>
+        <p>Saturated Fat: </p>
         <div className={`nutrient-fact ${SatFat}`}>{SatFat}</div>
       </li>
       <li>
-        <strong>Sugars: </strong>
+        <p>Sugars: </p>
         <div className={`nutrient-fact ${Sugar}`}>{Sugar}</div>
       </li>
       <li>
-        <strong>Salt: </strong>
+        <p>Salt: </p>
         <div className={`nutrient-fact ${Salt}`}>{Salt}</div>
       </li>
     </div>

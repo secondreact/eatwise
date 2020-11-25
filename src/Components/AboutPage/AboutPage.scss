@@ -8,9 +8,13 @@
   box-sizing: border-box;
   border-radius: 4px;
   box-shadow: 10px 10px 20px -15px rgba(117, 116, 117, 0.65);
+  .image-about {
+    width: 70rem;
+    justify-content: center;
+  }
   img {
-    justify-content: flex-start;
-    width: 400px;
+    margin: 10px auto;
+    width: 100%;
   }
   .about-content {
     justify-content: flex-end;
@@ -18,8 +22,17 @@
     margin: 5px;
   }
 }
+
 @media (max-width: 767px) {
   .about-section {
     flex-direction: column;
+    .image-about {
+      width: auto;
+      justify-content: center;
+    }
+    img {
+      margin: 2px auto;
+      width: 100%;
+    }
   }
 }
