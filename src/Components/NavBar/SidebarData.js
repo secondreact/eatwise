@@ -13,7 +13,7 @@ export const SidebarData = [
     title: "Details",
     path: "/details",
     icon: <FaIcons.FaCookieBite />,
-    cName: "nav-text",
+    cName: "nav-text-hidden",
   },
   {
     title: "Favorites",

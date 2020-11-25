@@ -11,7 +11,6 @@ import "../ProductDetails/Productdetails.scss";
 
 export default function AllergensSection(props) {
   let allergensList = props.allergens;
-
   const allergensMap = new Map();
   allergensMap
     .set("en:eggs", <Eggs />)
@@ -25,11 +24,17 @@ export default function AllergensSection(props) {
     <div className="contains-ingredients">
       <h4>Allergens:</h4>
       <div className="icons-section">
-        {allergensList?.map((allergen) => {
-          return (
-            <div className="detailpage-icon">{allergensMap.get(allergen)}</div>
-          );
-        })}
+        {allergensList?.some((i) => allergensMap.has(i)) ? (
+          allergensList?.map((allergen, i) => {
+            return (
+              <div key={i} className="detailpage-icon">
+                {allergensMap.get(allergen)}
+              </div>
+            );
+          })
+        ) : (
+          <div className="nutrient-fact">No data</div>
+        )}
       </div>
     </div>
   );
