@@ -40,8 +40,7 @@ function NavBar() {
         <Link to="/">
           <img className="navbar-logo" src={Logo} alt="EatWise-Logo" />
         </Link>
-      
-    </IconContext.Provider>
+      </IconContext.Provider>
     </div>
   );
 }
