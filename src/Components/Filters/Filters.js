@@ -32,8 +32,6 @@ export default class Filters extends Component {
 
   filterSearch = (productName) => {
     let url = `https://world.openfoodfacts.org/cgi/search.pl?action=process&search_terms=${productName}&search_simple=1`;
-    // this.findProducts(this.state.allergens);
-    //Arreglar el content del URL
 
     if (this.state.allergens) {
       url += `&tagtype_0=allergens&tag_contains_0=does_not_contain&tag_0=${this.state.allergens}`;

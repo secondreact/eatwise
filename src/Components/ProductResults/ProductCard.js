@@ -1,12 +1,18 @@
 import React from "react";
 import PlaceholderImage from "../../pages/shared/general_images/camera.svg";
 import "./Productinfo.scss";
+import * as FaIcons from "react-icons/fa";
 
 function ProductCard(props) {
   return (
     <div className="product-card">
       <a href={"./details/" + props.code}>
         <div>
+          <div>
+            <button className="heart-icon">
+              <FaIcons.FaHeart />
+            </button>
+          </div>
           {props.image ? (
             <img
               className="product-image"
