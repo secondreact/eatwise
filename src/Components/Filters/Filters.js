@@ -31,8 +31,7 @@ export default class Filters extends Component {
   };
 
   filterSearch = (productName) => {
-    let url = `https://world.openfoodfacts.org/cgi/search.pl?action=process&search_terms=kinder&search_simple=1`;
-    // let url = `https://world.openfoodfacts.org/cgi/search.pl?action=process&search_terms=${productName}&search_simple=1`;
+    let url = `https://world.openfoodfacts.org/cgi/search.pl?action=process&search_terms=${productName}&search_simple=1`;
 
     if (this.state.allergens) {
       url += `&tagtype_0=allergens&tag_contains_0=does_not_contain&tag_0=${this.state.allergens}`;
@@ -84,7 +83,7 @@ export default class Filters extends Component {
               );
             })}
 
-            <h3>Contains Palm Oil</h3>
+            <h3>Palm Oil content</h3>
             {this.palmOilOptions.map((item, i) => {
               return (
                 <div key={i}>
@@ -101,8 +100,8 @@ export default class Filters extends Component {
               );
             })}
           </div>
-          <h3>Your choice allergens: {this.state.allergens} </h3>
-          <h3>Your choice palm Oil: {this.state.palmOil} </h3>
+          <h3>Find products without: {this.state.allergens} </h3>
+          <h3>Palm Oil content: {this.state.palmOil} </h3>
 
           <button className="search-button" onClick={this.searchProducts}>
             Search
