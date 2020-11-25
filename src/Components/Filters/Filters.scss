@@ -46,12 +46,13 @@
 
 .search-button {
   cursor: pointer;
+  font-family: inherit;
   background-color: #ff6461;
   color: white;
   font-weight: 800;
-  font-size: 1rem;
-  padding: 10px;
-  border-radius: 4px;
+  font-size: 1.2rem;
+  padding: 8px;
+  border-radius: 5px;
   border: none;
   width: 150px;
   margin: 5px;

@@ -7,8 +7,8 @@ import Filters from "../Components/Filters/Filters";
 // API ENDPOINT: https://world.openfoodfacts.org/ https://world.openfoodfacts.org/brand/nutella/1.json
 
 export default class ResultsPage extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       products: [],
     };
@@ -38,10 +38,9 @@ export default class ResultsPage extends Component {
               return (
                 <ProductCard
                   key={item.code}
-                  productName={item.product_name}
-                  brand={item.brands}
-                  image={item.image_small_url}
-                  code={item.code}
+                  product={item}
+                  toggleFavorite={this.props.toggleFavorite}
+                  isFavorite={this.props.isFavorite}
                 />
               );
             })}

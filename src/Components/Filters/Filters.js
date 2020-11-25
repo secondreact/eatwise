@@ -83,7 +83,7 @@ export default class Filters extends Component {
               );
             })}
 
-            <h3>Contains Palm Oil</h3>
+            <h3>Palm Oil content</h3>
             {this.palmOilOptions.map((item, i) => {
               return (
                 <div key={i}>
@@ -100,8 +100,8 @@ export default class Filters extends Component {
               );
             })}
           </div>
-          <h3>Your choice allergens: {this.state.allergens} </h3>
-          <h3>Your choice palm Oil: {this.state.palmOil} </h3>
+          <h3>Find products without: {this.state.allergens} </h3>
+          <h3>Palm Oil content: {this.state.palmOil} </h3>
 
           <button className="search-button" onClick={this.searchProducts}>
             Search

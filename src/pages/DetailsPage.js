@@ -14,7 +14,7 @@ export default class DetailsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: [],
+      product: {},
       nutriments: [],
       imgRoot: [],
       catTag: [],
@@ -89,9 +89,9 @@ export default class DetailsPage extends Component {
         <div className="main-product-info details-box">
           <ProductCard
             code={this.state.product?.code}
-            image={this.state.product?.image_front_url}
-            productName={this.state.product?.product_name}
-            brand={this.state.product?.brands}
+            product={this.state.product}
+            toggleFavorite={(product) => this.props.toggleFavorite(product)}
+            isFavorite={(product) => this.props.isFavorite(product)}
           />
         </div>
         <div className="secondary-product-info details-box">
