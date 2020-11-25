@@ -12,19 +12,35 @@ export default function NutrientLevels(props) {
       <h4>Nutrient Facts</h4>
       <li>
         <p>Fat:</p>
-        <div className={`nutrient-fact ${Fat}`}>{Fat}</div>
+        {Fat ? (
+          <div className={`nutrient-fact ${Fat}`}>{Fat}</div>
+        ) : (
+          <div className="nutrient-fact">No data</div>
+        )}
       </li>
       <li>
         <p>Saturated Fat: </p>
-        <div className={`nutrient-fact ${SatFat}`}>{SatFat}</div>
+        {SatFat ? (
+          <div className={`nutrient-fact ${SatFat}`}>{SatFat}</div>
+        ) : (
+          <div className="nutrient-fact">No data</div>
+        )}
       </li>
       <li>
         <p>Sugars: </p>
-        <div className={`nutrient-fact ${Sugar}`}>{Sugar}</div>
+        {Sugar ? (
+          <div className={`nutrient-fact ${Sugar}`}>{Sugar}</div>
+        ) : (
+          <div className="nutrient-fact">No data</div>
+        )}
       </li>
       <li>
         <p>Salt: </p>
-        <div className={`nutrient-fact ${Salt}`}>{Salt}</div>
+        {Salt ? (
+          <div className={`nutrient-fact ${Salt}`}>{Salt}</div>
+        ) : (
+          <div className="nutrient-fact">No data</div>
+        )}
       </li>
     </div>
   );
