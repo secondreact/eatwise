@@ -24,7 +24,7 @@ export default function AllergensSection(props) {
     <div className="contains-ingredients">
       <h4>Allergens:</h4>
       <div className="icons-section">
-        {allergensList?.length !== 0 ? (
+        {allergensList?.some((i) => allergensMap.has(i)) ? (
           allergensList?.map((allergen, i) => {
             return (
               <div key={i} className="detailpage-icon">
