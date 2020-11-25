@@ -74,6 +74,7 @@ export default class Filters extends Component {
                 <div key={i} className="filter-input">
                   <label htmlFor={item}>No {item}</label>
                   <input
+                    name="allergies"
                     value={item}
                     type="radio"
                     key={item}
@@ -90,6 +91,7 @@ export default class Filters extends Component {
                 <div key={i}>
                   <label htmlFor={item}>{item}</label>
                   <input
+                    name="palm-oil"
                     value={item}
                     type="radio"
                     id={item}

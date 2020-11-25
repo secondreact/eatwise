@@ -21,8 +21,8 @@ export default function Contains(props) {
 
   console.log(containsIngredientsList);
   return (
-    <>
-      <h4>Ingredients labels:</h4>
+    <div className="contains-ingredients">
+      <h4>Ingredients information:</h4>
       <div className="icons-section">
         {containsIngredientsList?.map((ingredient) => {
           return (
@@ -30,7 +30,7 @@ export default function Contains(props) {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
 

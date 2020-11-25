@@ -22,8 +22,8 @@ export default function AllergensSection(props) {
     .set("en:fish", <Fish />);
 
   return (
-    <>
-      <h4>Allergens Information</h4>
+    <div className="contains-ingredients">
+      <h4>Allergens:</h4>
       <div className="icons-section">
         {allergensList?.map((allergen) => {
           return (
@@ -31,9 +31,9 @@ export default function AllergensSection(props) {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
 
 //       <Sugar />
-/* Sofi note: I have to fix the sugar icon */
+/* Sofi note:  have to fix the sugar icon */
