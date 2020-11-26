@@ -2,9 +2,12 @@ import React from "react";
 import { useState } from "react";
 import Quagga from "quagga";
 import ProductCard from "../ProductResults/ProductCard";
+import "./BarCode.scss";
+import { AiFillCamera } from "react-icons/ai";
+import { IconContext } from "react-icons";
 
 export default function BarCodeReader() {
-  const [code, setCode] = useState("-");
+  const [code, setCode] = useState("");
   const [error, setError] = useState(null);
   const [product, setProduct] = useState(null);
 
@@ -66,15 +69,26 @@ export default function BarCodeReader() {
   }
 
   return (
-    <div>
-      <h3>Code: {code}</h3>
-      <button onClick={initCamera}>Init Camera</button>
-      {product && <div>{product?.product_name + " " + product?.brands}</div>}
+    <div className="scan-container">
+      <h3>Product Code: {code}</h3>
+      <IconContext.Provider
+        value={{
+          color: "white",
+          size: "2rem",
+          style: { verticalAlign: "middle" },
+        }}
+      >
+        <button className="scan-button" onClick={initCamera}>
+          <AiFillCamera className="scan-icon" />
+        </button>
+      </IconContext.Provider>
+      {product && (
+        <div className="scan-product-card">
+          <ProductCard product={product} />
+        </div>
+      )}
       {!product && error && <div>{error}</div>}
-
-      {product && <ProductCard product={product} />}
-
-      <div id="cameraContainer"></div>
+      {product == null ? <div id="cameraContainer"></div> : ""}
     </div>
   );
 }

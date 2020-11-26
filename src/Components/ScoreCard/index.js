@@ -6,22 +6,21 @@ import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import ModalImage from "react-modal-image";
 import {
   ScoreTitle,
   ScoreContent,
   ScoreNovaTag,
-  ScoreNovaRank
+  ScoreNovaRank,
 } from "./ScoreCardElements";
 
 const styles = (theme) => ({
   root: {
-    width: "100%"
+    width: "100%",
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular
-  }
+    fontWeight: theme.typography.fontWeightRegular,
+  },
 });
 
 function ScoreCard(props) {
@@ -53,7 +52,7 @@ function ScoreCard(props) {
 }
 
 ScoreCard.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(ScoreCard);

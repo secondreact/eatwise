@@ -65,7 +65,7 @@ export default class Filters extends Component {
           ></input>
         </div>
         <div className="filters-section">
-          <h4>Find products by category:</h4>
+          <h3>Find products by category:</h3>
           {/* <label>Allergens:</label> */}
           <div className="filters">
             {this.listOfAllergens.map((item, i) => {
@@ -84,7 +84,7 @@ export default class Filters extends Component {
               );
             })}
 
-            <h5>Palm Oil content</h5>
+            <h4>Palm Oil content:</h4>
             {this.palmOilOptions.map((item, i) => {
               return (
                 <div key={i} className="filter-input">
