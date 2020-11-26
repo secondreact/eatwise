@@ -7,6 +7,7 @@ export { ReactComponent as NutsIcon } from "../../icons/contains-green/nuts-gree
 export { ReactComponent as PeanutsIcon } from "../../icons/contains-green/peanuts-green.svg";
 export { ReactComponent as SugarIcon } from "../../icons/contains-green/sugar-green.svg";
 export { ReactComponent as VeganIcon } from "../../icons/contains-green/vegan-green.svg";
+export { ReactComponent as PalmOilFree } from "../../icons/contains-green/no-palm-oil-green.svg";
 
 // RedIcons
 export { ReactComponent as Eggs } from "../../icons/contains-red/eggs-red.svg";
@@ -18,4 +19,5 @@ export { ReactComponent as Nuts } from "../../icons/contains-red/nuts-red.svg";
 export { ReactComponent as Peanuts } from "../../icons/contains-red/peanuts-red.svg";
 export { ReactComponent as Sugar } from "../../icons/contains-red/sugar-red.svg";
 export { ReactComponent as Vegan } from "../../icons/contains-red/vegan-red.svg";
+export { ReactComponent as ContainsPalmOil } from "../../icons/contains-red/with-palm-oil-red.svg";
 export { ReactComponent as NonVegan } from "../../icons/contains-red/Non-vegan.svg";

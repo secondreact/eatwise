@@ -20,7 +20,10 @@ export default function ProductCard(props) {
           style: { verticalAlign: "middle" },
         }}
       >
-        <Link to={"./details/" + props.product.code}>
+        <Link
+          to={"./details/" + props.product.code}
+          style={{ textDecoration: "none" }}
+        >
           <div>
             <div className="favorite-icon">
               <button onClick={handleFavoriteOnClick}>

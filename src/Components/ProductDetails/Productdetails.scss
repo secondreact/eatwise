@@ -54,6 +54,23 @@
 .detailpage-icon {
   margin: 5px;
 }
+// Contains Tooltip
+.detailpage-icon .tooltiptext {
+  color: white;
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba(43, 43, 43, 0.913);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.detailpage-icon:hover .tooltiptext {
+  visibility: visible;
+}
 
 /* this CSS is just to identify the items - it will be changed */
 /* div{

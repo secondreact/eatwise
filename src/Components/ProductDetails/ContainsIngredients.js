@@ -2,25 +2,27 @@ import React from "react";
 import {
   // EggIcon,
   // FishIcon,
-  Fats,
+  // Fats,
   // GlutenIcon,
   // LactoseIcon,
   // NutsIcon,
   // PeanutsIcon,
   // SugarIcon,
-  // VeganIcon,
+  PalmOilFree,
   NonVegan,
   VeganIcon,
+  ContainsPalmOil,
 } from "../../pages/shared/icons";
 
 export default function Contains(props) {
   let containsIngredientsList = props.contains;
   const containsMap = new Map();
   containsMap
-    .set("en:palm-oil", <Fats />)
     .set("en:non-vegan", <NonVegan />)
-    .set("en:vegan", <VeganIcon />);
-  //     "en:palm-oil-free",
+    .set("en:vegan", <VeganIcon />)
+    .set("en:palm-oil", <ContainsPalmOil />)
+    .set("en:palm-oil-free", <PalmOilFree />);
+
   // "en:vegetarian"
 
   return (
@@ -32,6 +34,7 @@ export default function Contains(props) {
             return (
               <div key={i} className="detailpage-icon">
                 {containsMap.get(ingredient)}
+                <span class="tooltiptext">{ingredient}</span>
               </div>
             );
           })
