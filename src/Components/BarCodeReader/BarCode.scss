@@ -28,4 +28,10 @@
 #cameraContainer {
   display: flex;
   flex-direction: column;
+
+  &.hideVideo {
+    video {
+      display: none;
+    }
+  }
 }
