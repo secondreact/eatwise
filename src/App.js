@@ -7,6 +7,7 @@ import DetailsPage from "./pages/DetailsPage";
 import AboutPage from "./pages/AboutPage";
 import FavoritesPage from "./pages/FavoritesPage";
 import NavBar from "./Components/NavBar/Navbar";
+import ScanPage from "./pages/ScanPage";
 
 export default class App extends Component {
   constructor() {
@@ -60,6 +61,7 @@ export default class App extends Component {
                   isFavorite={(product) => this.isFavorite(product)}
                 />
               </Route>
+              <Route exact path="/scan" component={ScanPage} />
               <Route
                 exact
                 path="/details/:code"
@@ -71,7 +73,6 @@ export default class App extends Component {
                   />
                 )}
               />
-              <Route exact path="/about" component={AboutPage} />
               <Route exact path="/favorites">
                 <FavoritesPage
                   favoriteProducts={this.state.favorites}
@@ -79,6 +80,7 @@ export default class App extends Component {
                   isFavorite={(product) => this.isFavorite(product)}
                 />
               </Route>
+              <Route exact path="/about" component={AboutPage} />
             </Switch>
           </Router>
         </div>

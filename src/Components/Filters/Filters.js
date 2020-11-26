@@ -84,7 +84,7 @@ export default class Filters extends Component {
               );
             })}
 
-            <h3>Palm Oil content</h3>
+            <h5>Palm Oil content</h5>
             {this.palmOilOptions.map((item, i) => {
               return (
                 <div key={i} className="filter-input">
