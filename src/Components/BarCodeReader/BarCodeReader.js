@@ -24,7 +24,10 @@ export default function BarCodeReader() {
         }
       });
   }
+
   function initCamera() {
+    setProduct(null);
+
     Quagga.init(
       {
         frequency: 1,
@@ -88,7 +91,7 @@ export default function BarCodeReader() {
         </div>
       )}
       {!product && error && <div>{error}</div>}
-      {product == null ? <div id="cameraContainer"></div> : ""}
+      <div className={product && "hideVideo"} id="cameraContainer"></div>
     </div>
   );
 }
