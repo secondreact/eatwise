@@ -11,6 +11,7 @@ export default class Filters extends Component {
       query: "",
       allergens: "",
       palmOil: "without",
+      loading: true,
     };
   }
 
@@ -55,7 +56,7 @@ export default class Filters extends Component {
             className="search-bar"
             onChange={this.queryChange}
             type="text"
-            placeholder="Find products by product name"
+            placeholder="Product name"
             onKeyPress={(event) => {
               if (event.key === "Enter") {
                 this.searchProducts();
@@ -64,8 +65,8 @@ export default class Filters extends Component {
           ></input>
         </div>
         <div className="filters-section">
-          <h4>Filter products by category:</h4>
-          <label>Allergens:</label>
+          <h4>Find products by category:</h4>
+          {/* <label>Allergens:</label> */}
           <div className="filters">
             {this.listOfAllergens.map((item, i) => {
               return (
@@ -86,8 +87,8 @@ export default class Filters extends Component {
             <h3>Palm Oil content</h3>
             {this.palmOilOptions.map((item, i) => {
               return (
-                <div key={i}>
-                  <label htmlFor={item}>{item}</label>
+                <div key={i} className="filter-input">
+                  <label htmlFor={item}>{item} palm oil</label>
                   <input
                     name="palm-oil"
                     value={item}
@@ -100,8 +101,6 @@ export default class Filters extends Component {
               );
             })}
           </div>
-          <h3>Find products without: {this.state.allergens} </h3>
-          <h3>Palm Oil content: {this.state.palmOil} </h3>
 
           <button className="search-button" onClick={this.searchProducts}>
             Search

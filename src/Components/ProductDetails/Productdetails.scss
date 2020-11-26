@@ -50,22 +50,33 @@
   flex-wrap: wrap;
   margin: 0 auto;
 }
+// Contains Tooltip
 
 .detailpage-icon {
   margin: 5px;
+  position: relative;
+  // display: inline-block;
 }
 
-/* this CSS is just to identify the items - it will be changed */
-/* div{
-  border-bottom: solid 0.5px lightgray;
-} */
+.detailpage-icon .icon-description {
+  color: white;
+  visibility: hidden;
+  width: fit-content;
+  background-color: rgba(43, 43, 43, 0.913);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 15px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
 
-// .novascore p:nth-child(2) {
-//   background-color: lightslategray;
-//   width: 80px;
-//   height: 100px;
-//   margin: 5px;
-// }
+.detailpage-icon:hover .icon-description {
+  visibility: visible;
+}
 
 h4 {
   color: #b94f4d;
