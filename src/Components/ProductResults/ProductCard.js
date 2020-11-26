@@ -26,13 +26,15 @@ export default function ProductCard(props) {
         >
           <div>
             <div className="favorite-icon">
-              <button onClick={handleFavoriteOnClick}>
-                {props.isFavorite(props.product) ? (
-                  <FaIcons.FaHeart />
-                ) : (
-                  <FaIcons.FaRegHeart />
-                )}
-              </button>
+              {props.isFavorite && (
+                <button onClick={handleFavoriteOnClick}>
+                  {props.isFavorite(props.product) ? (
+                    <FaIcons.FaHeart />
+                  ) : (
+                    <FaIcons.FaRegHeart />
+                  )}
+                </button>
+              )}
             </div>
             {props.product.image_small_url ? (
               <img
