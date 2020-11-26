@@ -137,3 +137,18 @@ h4 {
     width: 100%;
   }
 }
+
+//
+// toggle container : added by Omar
+.ToggleContainer {
+  justify-content: space-between;
+  width: 80%;
+  padding: 10px;
+  margin: 0 auto 10px;
+  height: fit-content;
+  border-radius: 4px;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 10px 10px 20px -15px rgba(117, 116, 117, 0.65);
+}
