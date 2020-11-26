@@ -13,11 +13,11 @@ export default class DetailsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: [],
+      product: {},
       ingredients: [],
       nutritions: [],
       score: [],
-      catTag: []
+      catTag: [],
     };
   }
 
@@ -130,7 +130,7 @@ export default class DetailsPage extends Component {
     ));
     // end of nutritions section
     //
-    
+
     return (
       <div className="product-details-container">
         <h3>Product Details</h3>
@@ -152,44 +152,43 @@ export default class DetailsPage extends Component {
         </div>
 
         <div>
-        <ModalImage
-          large={picFrontLarge}
-          small={picFrontSmall}
-          alt={this.state.product?.product_name}
-        />
-        
-        <div className='ToggleContainer'>
-        <div className='Ingredients'>
-          <IngredientsCard
-            className={"Ingredients"}
-            ingreTitle={"Ingredients"}
-            ingreTag={this.state.product?.ingredients_text_debug}
-            ingreContent={Ingriedient}
-            large={picIngreLarge}
-            small={picIngreSmall}
+          <ModalImage
+            large={picFrontLarge}
+            small={picFrontSmall}
+            alt={this.state.product?.product_name}
           />
+
+          <div className="ToggleContainer">
+            <div className="Ingredients">
+              <IngredientsCard
+                className={"Ingredients"}
+                ingreTitle={"Ingredients"}
+                ingreTag={this.state.product?.ingredients_text_debug}
+                ingreContent={Ingriedient}
+                large={picIngreLarge}
+                small={picIngreSmall}
+              />
+            </div>
+            <div>
+              <NutritionsCard
+                className={"Nutritions"}
+                nutriTitle={"Nutritions"}
+                nutriContent={Nutritions}
+                large={picNutriLarge}
+                small={picNutriSmall}
+              />
+            </div>
+            <div>
+              <ScoreCard
+                className={"Ratings"}
+                scoreTitle={"Score"}
+                scoreContent={Score}
+                scoreNovaTag={this.state.product?.nova_groups_tags}
+                scoreNova={this.state.product?.nova_group}
+              />
+            </div>
+          </div>
         </div>
-        <div>
-          <NutritionsCard
-            className={"Nutritions"}
-            nutriTitle={"Nutritions"}
-            nutriContent={Nutritions}
-            large={picNutriLarge}
-            small={picNutriSmall}
-          />
-        </div>
-        <div>
-          <ScoreCard
-            className={"Ratings"}
-            scoreTitle={"Score"}
-            scoreContent={Score}
-            scoreNovaTag={this.state.product?.nova_groups_tags}
-            scoreNova={this.state.product?.nova_group}
-          />
-        </div>
-        </div>
-        
-      </div>
       </div>
     );
   }
