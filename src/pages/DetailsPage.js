@@ -17,7 +17,8 @@ export default class DetailsPage extends Component {
       ingredients: [],
       nutritions: [],
       score: [],
-      catTag: []
+      catTag: [],
+      ingreTag: []
     };
   }
 
@@ -30,7 +31,8 @@ export default class DetailsPage extends Component {
           ingredients: response?.product?.ingredients,
           nutritions: response?.product?.nutriments,
           score: response?.product?.nutriscore_data,
-          catTag: response.product.categories_tags,
+          catTag: response?.product?.categories_tags,
+          ingreTag: response?.product?.ingredients_text_debug
         });
       });
   }
@@ -41,7 +43,8 @@ export default class DetailsPage extends Component {
   }
 
   render() {
-    const CatTag = this.state.catTag.toString().replace(/en:/g, " ");
+    const CatTag = this.state.catTag?.toString().replace(/en:/g, " ");
+    const IngreTag = this.state.ingreTag?.toString().replace(/_/g, "")
     //
     // pictures X function getPic = correct image
     const getPic = (pic, en, de, all) => {
@@ -76,7 +79,7 @@ export default class DetailsPage extends Component {
     const Ingriedient = this.state.ingredients.map((ingred) => {
       return (
         <div>
-          <div>
+          <div className='ingredCard'>
             {Number(ingred.rank) > 0 && <div>Item Nr. {ingred.rank}</div>}
             {ingred.text > "" && (
               <div>
@@ -158,12 +161,12 @@ export default class DetailsPage extends Component {
           alt={this.state.product?.product_name}
         />
         
-        <div className='ToggleContainer'>
+        <div className='toggleContainer'>
         <div className='Ingredients'>
           <IngredientsCard
-            className={"Ingredients"}
+            className="ingredients"
             ingreTitle={"Ingredients"}
-            ingreTag={this.state.product?.ingredients_text_debug}
+            ingreTag={IngreTag}
             ingreContent={Ingriedient}
             large={picIngreLarge}
             small={picIngreSmall}
@@ -171,7 +174,7 @@ export default class DetailsPage extends Component {
         </div>
         <div>
           <NutritionsCard
-            className={"Nutritions"}
+            className={"nutritions"}
             nutriTitle={"Nutritions"}
             nutriContent={Nutritions}
             large={picNutriLarge}
@@ -180,7 +183,7 @@ export default class DetailsPage extends Component {
         </div>
         <div>
           <ScoreCard
-            className={"Ratings"}
+            className={"score"}
             scoreTitle={"Score"}
             scoreContent={Score}
             scoreNovaTag={this.state.product?.nova_groups_tags}

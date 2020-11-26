@@ -7,7 +7,7 @@ import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ModalImage from "react-modal-image";
-import { MainContainer, IngreTitle, IngreContent, IngreTag } from "./IngredientsCardElements";
+import { MainContainer, IngreTitle, IngreContent, IngreTag, IngrePic, PicTagWrap } from "./IngredientsCardElements";
 
 const styles = (theme) => ({
   root: {
@@ -36,9 +36,13 @@ function IngredientsCard(props) {
 
         <ExpansionPanelDetails>
           <MainContainer>
+          <PicTagWrap>
           <IngreTag> {props.ingreTag} </IngreTag>
-          <IngreContent> {props.ingreContent} </IngreContent>
+          <IngrePic>
           <ModalImage large={props.large} small={props.small} alt={props.alt} />
+          </IngrePic>
+          </PicTagWrap>
+          <IngreContent> {props.ingreContent} </IngreContent>
           </MainContainer>
         </ExpansionPanelDetails>
       </ExpansionPanel>
