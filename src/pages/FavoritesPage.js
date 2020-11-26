@@ -7,7 +7,7 @@ export default function Favorites(props) {
   return (
     <div>
       <div>
-        <h2>My Favorites</h2>
+        <h1>My Favorites</h1>
         <div className="results-list">
           {props.favoriteProducts.map((product) => {
             return (
