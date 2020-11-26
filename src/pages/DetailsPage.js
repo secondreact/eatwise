@@ -2,24 +2,22 @@ import React, { Component } from "react";
 import AllergensSection from "../Components/ProductDetails/AllergensSection";
 import Contains from "../Components/ProductDetails/ContainsIngredients";
 import NutrientLevels from "../Components/ProductDetails/NutrientLevels";
-import {
-  IngredientsContainer,
-  IngredientsTable,
-} from "../Components/Ingredients/IngredientsElements";
 import ProductCard from "../Components/ProductResults/ProductCard";
 import "../Components/ProductDetails/Productdetails.scss";
-// you can use this test product code: https://world.openfoodfacts.org/api/v0/product/3017620422003
+import ModalImage from "react-modal-image";
+import IngredientsCard from "../Components/IngredientsCard";
+import NutritionsCard from "../Components/NutritionsCard";
+import ScoreCard from "../Components/ScoreCard";
 
 export default class DetailsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: {},
-      nutriments: [],
-      imgRoot: [],
-      catTag: [],
+      product: [],
       ingredients: [],
-      ing: [],
+      nutritions: [],
+      score: [],
+      catTag: []
     };
   }
 
@@ -29,9 +27,10 @@ export default class DetailsPage extends Component {
       .then((response) => {
         this.setState({
           product: response.product,
+          ingredients: response?.product?.ingredients,
+          nutritions: response?.product?.nutriments,
+          score: response?.product?.nutriscore_data,
           catTag: response.product.categories_tags,
-          ingredients: response.product.ingredients,
-          ing: response.ingredients,
         });
       });
   }
@@ -43,46 +42,95 @@ export default class DetailsPage extends Component {
 
   render() {
     const CatTag = this.state.catTag.toString().replace(/en:/g, " ");
+    //
+    // pictures X function getPic = correct image
+    const getPic = (pic, en, de, all) => {
+      const notFound = this.state?.image_url;
+      if (!pic) {
+        return notFound;
+      }
+      en = pic.en;
+      de = pic.de;
+      all = Object.values(pic);
+      if (en) {
+        return en;
+      } else if (de) {
+        return de;
+      } else {
+        return all[0];
+      }
+    };
+
+    const pictures = this.state.product?.selected_images;
+    const picFrontLarge = getPic(pictures?.front?.display);
+    const picFrontSmall = getPic(pictures?.front?.small);
+    const picIngreLarge = getPic(pictures?.ingredients?.display);
+    const picIngreSmall = getPic(pictures?.ingredients?.small);
+    const picNutriLarge = getPic(pictures?.nutrition?.display);
+    const picNutriSmall = getPic(pictures?.nutrition?.small);
+    // end of pictures section
+    //
+
+    //
+    // ingredienets section
     const Ingriedient = this.state.ingredients.map((ingred) => {
       return (
-        <IngredientsContainer>
-          <IngredientsTable>
+        <div>
+          <div>
             {Number(ingred.rank) > 0 && <div>Item Nr. {ingred.rank}</div>}
-
             {ingred.text > "" && (
               <div>
                 {ingred.text.replace(/_/g, "")} <br />{" "}
                 {ingred.id.replace(/en:/g, "").replace(/fr:/g, "")}
               </div>
             )}
-
             {ingred.vegan > "" && <div>Vegan: {ingred.vegan} </div>}
-
             {ingred.from_palm_oil > "" && (
               <div>from-palm-oil: {ingred.from_palm_oil} </div>
             )}
-
             {ingred.percent_estimate > 0 && (
               <div>
                 percent estimate: {Number(ingred.percent_estimate).toFixed(3)}{" "}
               </div>
             )}
-
             {ingred.percent > 0 && (
               <div>percent: {Number(ingred.percent).toFixed(3)} </div>
             )}
-
             {ingred.has_sub_ingredients > "" && (
               <div>sub-ingredients: {ingred.has_sub_ingredients} </div>
             )}
-
             <div>
               <br />
             </div>
-          </IngredientsTable>
-        </IngredientsContainer>
+          </div>
+        </div>
       );
     });
+    // end of ingredients section
+    //
+
+    //
+    // nutritions section
+    const Nutritions = Object.entries(this.state.nutritions).map(
+      ([key, val]) => (
+        <div key={key}>
+          {key}: {val}
+        </div>
+      )
+    );
+    // end of nutritions section
+    //
+
+    //
+    // nutritions section
+    const Score = Object.entries(this.state.score).map(([key, val]) => (
+      <div key={key}>
+        {key}: {val}
+      </div>
+    ));
+    // end of nutritions section
+    //
+    
     return (
       <div className="product-details-container">
         <h3>Product Details</h3>
@@ -93,6 +141,7 @@ export default class DetailsPage extends Component {
             toggleFavorite={(product) => this.props.toggleFavorite(product)}
             isFavorite={(product) => this.props.isFavorite(product)}
           />
+          <div>{CatTag}</div>
         </div>
         <div className="secondary-product-info details-box">
           <NutrientLevels
@@ -102,11 +151,45 @@ export default class DetailsPage extends Component {
           <AllergensSection allergens={this.state.product?.allergens_tags} />
         </div>
 
-        <div className="details-box">
-          <div>categories_tags: {CatTag}</div>
-          <div>{this.state.product.ingredients_text_debug} </div>
+        <div>
+        <ModalImage
+          large={picFrontLarge}
+          small={picFrontSmall}
+          alt={this.state.product?.product_name}
+        />
+        
+        <div className='ToggleContainer'>
+        <div className='Ingredients'>
+          <IngredientsCard
+            className={"Ingredients"}
+            ingreTitle={"Ingredients"}
+            ingreTag={this.state.product?.ingredients_text_debug}
+            ingreContent={Ingriedient}
+            large={picIngreLarge}
+            small={picIngreSmall}
+          />
         </div>
-        <div className="details-box"> {Ingriedient} </div>
+        <div>
+          <NutritionsCard
+            className={"Nutritions"}
+            nutriTitle={"Nutritions"}
+            nutriContent={Nutritions}
+            large={picNutriLarge}
+            small={picNutriSmall}
+          />
+        </div>
+        <div>
+          <ScoreCard
+            className={"Ratings"}
+            scoreTitle={"Score"}
+            scoreContent={Score}
+            scoreNovaTag={this.state.product?.nova_groups_tags}
+            scoreNova={this.state.product?.nova_group}
+          />
+        </div>
+        </div>
+        
+      </div>
       </div>
     );
   }
