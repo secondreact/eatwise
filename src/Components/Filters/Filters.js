@@ -65,7 +65,7 @@ export default class Filters extends Component {
           ></input>
         </div>
         <div className="filters-section">
-          <h4>Find products that meet your needs:</h4>
+          <h4>Find products by category:</h4>
           {/* <label>Allergens:</label> */}
           <div className="filters">
             {this.listOfAllergens.map((item, i) => {
