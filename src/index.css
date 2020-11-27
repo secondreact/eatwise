@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: "Nunito", sans-serif;
+  font-family: "Playfair Display", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -19,4 +20,11 @@ code {
 
 .AllPages li {
   display: inline-block;
+}
+
+.page-header {
+  font-weight: lighter;
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  margin-bottom: 2px;
 }

@@ -10,6 +10,12 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
+    title: "Scan",
+    path: "/scan",
+    icon: <AiIcons.AiOutlineScan />,
+    cName: "nav-text",
+  },
+  {
     title: "Details",
     path: "/details",
     icon: <FaIcons.FaCookieBite />,

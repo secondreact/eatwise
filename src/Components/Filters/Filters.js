@@ -2,7 +2,16 @@ import React, { Component } from "react";
 import "./Filters.scss";
 
 export default class Filters extends Component {
-  listOfAllergens = ["milk", "nuts", "fish", "eggs", "gluten"];
+  listOfAllergens = [
+    "milk",
+    "nuts",
+    "fish",
+    "eggs",
+    "gluten",
+    "soybeans",
+    "peanuts",
+    "mustard",
+  ];
   palmOilOptions = ["with", "without"];
 
   constructor(props) {
@@ -11,6 +20,7 @@ export default class Filters extends Component {
       query: "",
       allergens: "",
       palmOil: "without",
+      loading: true,
     };
   }
 
@@ -55,7 +65,7 @@ export default class Filters extends Component {
             className="search-bar"
             onChange={this.queryChange}
             type="text"
-            placeholder="Find products by product name"
+            placeholder="Product name"
             onKeyPress={(event) => {
               if (event.key === "Enter") {
                 this.searchProducts();
@@ -64,9 +74,8 @@ export default class Filters extends Component {
           ></input>
         </div>
         <div className="filters-section">
-          <h4>Filter products by category:</h4>
-          <label>Allergens:</label>
-          <div className="filters">
+          <h3>Find allergen-free products:</h3>
+          <div className="allergens-filters">
             {this.listOfAllergens.map((item, i) => {
               return (
                 <div key={i} className="filter-input">
@@ -82,11 +91,12 @@ export default class Filters extends Component {
                 </div>
               );
             })}
-
-            <h3>Palm Oil content</h3>
+          </div>
+          <div>
+            <h3>Palm Oil content:</h3>
             {this.palmOilOptions.map((item, i) => {
               return (
-                <div key={i}>
+                <div key={i} className="filter-input">
                   <label htmlFor={item}>{item}</label>
                   <input
                     name="palm-oil"
@@ -100,8 +110,6 @@ export default class Filters extends Component {
               );
             })}
           </div>
-          <h3>Find products without: {this.state.allergens} </h3>
-          <h3>Palm Oil content: {this.state.palmOil} </h3>
 
           <button className="search-button" onClick={this.searchProducts}>
             Search

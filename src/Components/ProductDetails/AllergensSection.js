@@ -6,19 +6,23 @@ import {
   Lactose,
   Nuts,
   Peanuts,
+  Soybeans,
+  Mustard,
 } from "../../pages/shared/icons";
 import "../ProductDetails/Productdetails.scss";
 
 export default function AllergensSection(props) {
-  let allergensList = props.allergens;
+  let allergensList = props.allergens?.map((allergen) => allergen.slice(3));
   const allergensMap = new Map();
   allergensMap
-    .set("en:eggs", <Eggs />)
-    .set("en:nuts", <Nuts />)
-    .set("en:milk", <Lactose />)
-    .set("en:gluten", <Gluten />)
-    .set("en:peanuts", <Peanuts />)
-    .set("en:fish", <Fish />);
+    .set("eggs", <Eggs />)
+    .set("nuts", <Nuts />)
+    .set("milk", <Lactose />)
+    .set("gluten", <Gluten />)
+    .set("peanuts", <Peanuts />)
+    .set("fish", <Fish />)
+    .set("soybeans", <Soybeans />)
+    .set("mustard", <Mustard />);
 
   return (
     <div className="contains-ingredients">
@@ -29,6 +33,7 @@ export default function AllergensSection(props) {
             return (
               <div key={i} className="detailpage-icon">
                 {allergensMap.get(allergen)}
+                <span className="icon-description">{allergen}</span>
               </div>
             );
           })

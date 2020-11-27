@@ -11,10 +11,13 @@ export default class ResultsPage extends Component {
     super(props);
     this.state = {
       products: [],
+      isLoading: false,
     };
   }
   // Gets URL from Filters component
+
   getFilteredProducts = (url) => {
+    this.setState({ isLoading: true });
     fetch(url)
       .then((data) => data.json())
       .then((response) => {
@@ -22,17 +25,21 @@ export default class ResultsPage extends Component {
       })
       .catch((error) => {
         console.error("Found an error!", error);
+      })
+      .finally(() => {
+        this.setState({ isLoading: false });
       });
   };
 
   render() {
     return (
       <div>
-        <div>
-          <h2>Explore Products</h2>
+        <div className="main-pages-container">
+          <h2 className="page-header">Explore Products</h2>
           <div className="filters-section">
             <Filters getFilteredProducts={this.getFilteredProducts} />
           </div>
+          {this.state.isLoading && <div className="loader"></div>}
           <div className="results-list">
             {this.state.products.map((item) => {
               return (
