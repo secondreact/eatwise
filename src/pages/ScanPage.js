@@ -6,7 +6,7 @@ export default class ScanPage extends Component {
   render() {
     return (
       <div>
-        <h2>Scan the product barcode:</h2>
+        <h2 className="page-header">Scan the barcode:</h2>
         <BarCodeReader />
         <Footer />
       </div>

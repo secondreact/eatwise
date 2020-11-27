@@ -1,53 +1,51 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import ExpansionPanel from "@material-ui/core/ExpansionPanel";
-import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
-import Typography from "@material-ui/core/Typography";
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ModalImage from "react-modal-image";
-import { MainContainer, IngreTitle, IngreContent, IngreTag } from "./IngredientsCardElements";
+import {
+  MainContainer,
+  IngreTitle,
+  IngreContent,
+  IngreTag,
+} from "./IngredientsCardElements";
 
 const styles = (theme) => ({
   root: {
-    width: "100%"
+    width: "100%",
   },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular
-  }
-
-
 });
 
 function IngredientsCard(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <ExpansionPanel>
-        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography>
-            <IngreTitle className={classes.heading}>
-              {props.ingreTitle}
-            </IngreTitle>
-          </Typography>
-        </ExpansionPanelSummary>
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <IngreTitle>{props.ingreTitle}</IngreTitle>
+        </AccordionSummary>
 
-        <ExpansionPanelDetails>
+        <AccordionDetails>
           <MainContainer>
-          <IngreTag> {props.ingreTag} </IngreTag>
-          <IngreContent> {props.ingreContent} </IngreContent>
-          <ModalImage large={props.large} small={props.small} alt={props.alt} />
+            <IngreTag> {props.ingreTag} </IngreTag>
+            <IngreContent> {props.ingreContent} </IngreContent>
+            <ModalImage
+              large={props.large}
+              small={props.small}
+              alt={props.alt}
+            />
           </MainContainer>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
+        </AccordionDetails>
+      </Accordion>
     </div>
   );
 }
 
 IngredientsCard.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(IngredientsCard);

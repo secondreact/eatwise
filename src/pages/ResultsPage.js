@@ -35,11 +35,11 @@ export default class ResultsPage extends Component {
     return (
       <div>
         <div className="main-pages-container">
-          <h2>Explore Products</h2>
+          <h2 className="page-header">Explore Products</h2>
           <div className="filters-section">
             <Filters getFilteredProducts={this.getFilteredProducts} />
           </div>
-          {this.state.isLoading && <div class="loader"></div>}
+          {this.state.isLoading && <div className="loader"></div>}
           <div className="results-list">
             {this.state.products.map((item) => {
               return (

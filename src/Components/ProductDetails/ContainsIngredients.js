@@ -34,7 +34,7 @@ export default function Contains(props) {
             return (
               <div key={i} className="detailpage-icon">
                 {containsMap.get(label)}
-                <span class="icon-description">{label}</span>
+                <span className="icon-description">{label}</span>
               </div>
             );
           })

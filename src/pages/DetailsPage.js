@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import AllergensSection from "../Components/ProductDetails/AllergensSection";
 import Contains from "../Components/ProductDetails/ContainsIngredients";
 import NutrientLevels from "../Components/ProductDetails/NutrientLevels";
-import ProductCard from "../Components/ProductResults/ProductCard";
 import "../Components/ProductDetails/Productdetails.scss";
-import ModalImage from "react-modal-image";
 import IngredientsCard from "../Components/IngredientsCard";
 import NutritionsCard from "../Components/NutritionsCard";
 import ScoreCard from "../Components/ScoreCard";
@@ -42,7 +40,7 @@ export default class DetailsPage extends Component {
   }
 
   render() {
-    const CatTag = this.state.catTag.toString().replace(/en:/g, " ");
+    const CatTag = this.state.catTag?.toString().replace(/en:/g, " ");
     //
     // pictures X function getPic = correct image
     const getPic = (pic, en, de, all) => {
@@ -63,8 +61,6 @@ export default class DetailsPage extends Component {
     };
 
     const pictures = this.state.product?.selected_images;
-    const picFrontLarge = getPic(pictures?.front?.display);
-    const picFrontSmall = getPic(pictures?.front?.small);
     const picIngreLarge = getPic(pictures?.ingredients?.display);
     const picIngreSmall = getPic(pictures?.ingredients?.small);
     const picNutriLarge = getPic(pictures?.nutrition?.display);
@@ -74,9 +70,9 @@ export default class DetailsPage extends Component {
 
     //
     // ingredients section
-    const Ingriedient = this.state.ingredients.map((ingred) => {
+    const Ingriedient = this.state.ingredients?.map((ingred) => {
       return (
-        <div>
+        <div key={ingred.id}>
           <div>
             {Number(ingred.rank) > 0 && <div>Item Nr. {ingred.rank}</div>}
             {ingred.text > "" && (
@@ -123,18 +119,21 @@ export default class DetailsPage extends Component {
     //
 
     //
-    // nutritions section
-    const Score = Object.entries(this.state.score).map(([key, val]) => (
-      <div key={key}>
-        {key}: {val}
-      </div>
-    ));
+    // nutritions sectio
+    let Score;
+    if (this.state.score) {
+      Score = Object.entries(this.state.score).map(([key, val]) => (
+        <div key={key}>
+          {key}: {val}
+        </div>
+      ));
+    }
     // end of nutritions section
     //
 
     return (
       <div className="product-details-container">
-        <h3>Product Details</h3>
+        <h3 className="page-header">Product Details</h3>
         <div className="main-product-info details-box">
           <DetailsBasicCard
             code={this.state.product?.code}
