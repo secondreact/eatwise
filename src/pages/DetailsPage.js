@@ -17,6 +17,9 @@ export default class DetailsPage extends Component {
       nutritions: [],
       score: [],
       catTag: [],
+
+      ingreTag: []
+
     };
   }
 
@@ -29,7 +32,8 @@ export default class DetailsPage extends Component {
           ingredients: response?.product?.ingredients,
           nutritions: response?.product?.nutriments,
           score: response?.product?.nutriscore_data,
-          catTag: response.product.categories_tags,
+          catTag: response?.product?.categories_tags,
+          ingreTag: response?.product?.ingredients_text_debug
         });
       });
   }
@@ -41,7 +45,9 @@ export default class DetailsPage extends Component {
 
   render() {
     const CatTag = this.state.catTag?.toString().replace(/en:/g, " ");
-    //
+
+    const IngreTag = this.state.ingreTag?.toString().replace(/_/g, "")
+    
     // pictures X function getPic = correct image
     const getPic = (pic, en, de, all) => {
       const notFound = this.state?.image_url;
@@ -72,8 +78,12 @@ export default class DetailsPage extends Component {
     // ingredients section
     const Ingriedient = this.state.ingredients?.map((ingred) => {
       return (
-        <div key={ingred.id}>
+
+        <div>
+          <div key={ingred.id} className='ingredCard'>
+
           <div>
+
             {Number(ingred.rank) > 0 && <div>Item Nr. {ingred.rank}</div>}
             {ingred.text > "" && (
               <div>
@@ -152,42 +162,42 @@ export default class DetailsPage extends Component {
         </div>
 
         <div>
-          {/* <ModalImage
-            large={picFrontLarge}
-            small={picFrontSmall}
-            alt={this.state.product?.product_name}
-          /> */}
 
-          <div className="ToggleContainer">
-            <div className="Ingredients">
-              <IngredientsCard
-                className={"Ingredients"}
-                ingreTitle={"Ingredients"}
-                ingreTag={this.state.product?.ingredients_text_debug}
-                ingreContent={Ingriedient}
-                large={picIngreLarge}
-                small={picIngreSmall}
-              />
-            </div>
-            <div>
-              <NutritionsCard
-                className={"Nutritions"}
-                nutriTitle={"Nutritions"}
-                nutriContent={Nutritions}
-                large={picNutriLarge}
-                small={picNutriSmall}
-              />
-            </div>
-            <div>
-              <ScoreCard
-                className={"Ratings"}
-                scoreTitle={"Score"}
-                scoreContent={Score}
-                scoreNovaTag={this.state.product?.nova_groups_tags}
-                scoreNova={this.state.product?.nova_group}
-              />
-            </div>
-          </div>
+        <ModalImage
+          large={picFrontLarge}
+          small={picFrontSmall}
+          alt={this.state.product?.product_name}
+        />
+        
+        <div className='toggleContainer'>
+        <div className='Ingredients'>
+          <IngredientsCard
+            className="ingredients"
+            ingreTitle={"Ingredients"}
+            ingreTag={IngreTag}
+            ingreContent={Ingriedient}
+            large={picIngreLarge}
+            small={picIngreSmall}
+          />
+        </div>
+        <div>
+          <NutritionsCard
+            className={"nutritions"}
+            nutriTitle={"Nutritions"}
+            nutriContent={Nutritions}
+            large={picNutriLarge}
+            small={picNutriSmall}
+          />
+        </div>
+        <div>
+          <ScoreCard
+            className={"score"}
+            scoreTitle={"Score"}
+            scoreContent={Score}
+            scoreNovaTag={this.state.product?.nova_groups_tags}
+            scoreNova={this.state.product?.nova_group}
+          />
+        </div>
         </div>
       </div>
     );

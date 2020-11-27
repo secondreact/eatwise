@@ -6,12 +6,7 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import ModalImage from "react-modal-image";
-import {
-  MainContainer,
-  IngreTitle,
-  IngreContent,
-  IngreTag,
-} from "./IngredientsCardElements";
+import { MainContainer, IngreTitle, IngreContent, IngreTag, IngrePic, PicTagWrap } from "./IngredientsCardElements";
 
 const styles = (theme) => ({
   root: {
@@ -30,13 +25,14 @@ function IngredientsCard(props) {
 
         <AccordionDetails>
           <MainContainer>
-            <IngreTag> {props.ingreTag} </IngreTag>
-            <IngreContent> {props.ingreContent} </IngreContent>
-            <ModalImage
-              large={props.large}
-              small={props.small}
-              alt={props.alt}
-            />
+          <PicTagWrap>
+          <IngreTag> {props.ingreTag} </IngreTag>
+          <IngrePic>
+          <ModalImage large={props.large} small={props.small} alt={props.alt} />
+          </IngrePic>
+          </PicTagWrap>
+          <IngreContent> {props.ingreContent} </IngreContent>
+
           </MainContainer>
         </AccordionDetails>
       </Accordion>
