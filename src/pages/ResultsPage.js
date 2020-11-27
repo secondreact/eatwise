@@ -34,7 +34,7 @@ export default class ResultsPage extends Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="main-pages-container">
           <h2>Explore Products</h2>
           <div className="filters-section">
             <Filters getFilteredProducts={this.getFilteredProducts} />

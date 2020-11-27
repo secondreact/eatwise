@@ -2,7 +2,16 @@ import React, { Component } from "react";
 import "./Filters.scss";
 
 export default class Filters extends Component {
-  listOfAllergens = ["milk", "nuts", "fish", "eggs", "gluten"];
+  listOfAllergens = [
+    "milk",
+    "nuts",
+    "fish",
+    "eggs",
+    "gluten",
+    "soybeans",
+    "peanuts",
+    "mustard",
+  ];
   palmOilOptions = ["with", "without"];
 
   constructor(props) {
@@ -65,9 +74,8 @@ export default class Filters extends Component {
           ></input>
         </div>
         <div className="filters-section">
-          <h3>Find products by category:</h3>
-          {/* <label>Allergens:</label> */}
-          <div className="filters">
+          <h3>Find allergen-free products:</h3>
+          <div className="allergens-filters">
             {this.listOfAllergens.map((item, i) => {
               return (
                 <div key={i} className="filter-input">
@@ -83,12 +91,13 @@ export default class Filters extends Component {
                 </div>
               );
             })}
-
-            <h4>Palm Oil content:</h4>
+          </div>
+          <div>
+            <h3>Palm Oil content:</h3>
             {this.palmOilOptions.map((item, i) => {
               return (
                 <div key={i} className="filter-input">
-                  <label htmlFor={item}>{item} palm oil</label>
+                  <label htmlFor={item}>{item}</label>
                   <input
                     name="palm-oil"
                     value={item}
