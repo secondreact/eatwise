@@ -21,3 +21,5 @@ export { ReactComponent as Sugar } from "../../icons/contains-red/sugar-red.svg"
 export { ReactComponent as Vegan } from "../../icons/contains-red/vegan-red.svg";
 export { ReactComponent as ContainsPalmOil } from "../../icons/contains-red/with-palm-oil-red.svg";
 export { ReactComponent as NonVegan } from "../../icons/contains-red/Non-vegan.svg";
+export { ReactComponent as Mustard } from "../../icons/contains-red/mustard-red.svg";
+export { ReactComponent as Soybeans } from "../../icons/contains-red/soybeans-red.svg";

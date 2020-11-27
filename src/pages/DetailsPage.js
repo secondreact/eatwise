@@ -8,6 +8,7 @@ import ModalImage from "react-modal-image";
 import IngredientsCard from "../Components/IngredientsCard";
 import NutritionsCard from "../Components/NutritionsCard";
 import ScoreCard from "../Components/ScoreCard";
+import DetailsBasicCard from "../Components/ProductResults/DetailsBasicCard";
 
 export default class DetailsPage extends Component {
   constructor(props) {
@@ -72,7 +73,7 @@ export default class DetailsPage extends Component {
     //
 
     //
-    // ingredienets section
+    // ingredients section
     const Ingriedient = this.state.ingredients.map((ingred) => {
       return (
         <div>
@@ -135,14 +136,14 @@ export default class DetailsPage extends Component {
       <div className="product-details-container">
         <h3>Product Details</h3>
         <div className="main-product-info details-box">
-          <ProductCard
+          <DetailsBasicCard
             code={this.state.product?.code}
             product={this.state.product}
             toggleFavorite={(product) => this.props.toggleFavorite(product)}
             isFavorite={(product) => this.props.isFavorite(product)}
           />
-          <div>{CatTag}</div>
         </div>
+        <div className="details-box">{CatTag}</div>
         <div className="secondary-product-info details-box">
           <NutrientLevels
             nutrientLevels={this.state.product?.nutrient_levels}
@@ -152,11 +153,11 @@ export default class DetailsPage extends Component {
         </div>
 
         <div>
-          <ModalImage
+          {/* <ModalImage
             large={picFrontLarge}
             small={picFrontSmall}
             alt={this.state.product?.product_name}
-          />
+          /> */}
 
           <div className="ToggleContainer">
             <div className="Ingredients">

@@ -6,6 +6,8 @@ import {
   Lactose,
   Nuts,
   Peanuts,
+  Soybeans,
+  Mustard,
 } from "../../pages/shared/icons";
 import "../ProductDetails/Productdetails.scss";
 
@@ -18,7 +20,9 @@ export default function AllergensSection(props) {
     .set("milk", <Lactose />)
     .set("gluten", <Gluten />)
     .set("peanuts", <Peanuts />)
-    .set("fish", <Fish />);
+    .set("fish", <Fish />)
+    .set("soybeans", <Soybeans />)
+    .set("mustard", <Mustard />);
 
   return (
     <div className="contains-ingredients">
