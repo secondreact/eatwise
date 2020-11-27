@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import ExpansionPanel from "@material-ui/core/ExpansionPanel";
-import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
-import Typography from "@material-ui/core/Typography";
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import {
   ScoreTitle,
@@ -17,25 +16,17 @@ const styles = (theme) => ({
   root: {
     width: "100%",
   },
-  heading: {
-    fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular,
-  },
 });
 
 function ScoreCard(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <ExpansionPanel>
-        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography>
-            <ScoreTitle className={classes.heading}>
-              {props.scoreTitle}
-            </ScoreTitle>
-          </Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <ScoreTitle>{props.scoreTitle}</ScoreTitle>
+        </AccordionSummary>
+        <AccordionDetails>
           <ScoreNovaTag> Nova Tag: {props.scoreNovaTag} Nova Tag </ScoreNovaTag>
           <ScoreNovaRank>
             {" "}
@@ -45,8 +36,8 @@ function ScoreCard(props) {
             {" "}
             Nutritions Score {props.scoreContent} Nutritions Score{" "}
           </ScoreContent>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
+        </AccordionDetails>
+      </Accordion>
     </div>
   );
 }

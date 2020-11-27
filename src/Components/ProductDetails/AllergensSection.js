@@ -33,7 +33,7 @@ export default function AllergensSection(props) {
             return (
               <div key={i} className="detailpage-icon">
                 {allergensMap.get(allergen)}
-                <span class="icon-description">{allergen}</span>
+                <span className="icon-description">{allergen}</span>
               </div>
             );
           })

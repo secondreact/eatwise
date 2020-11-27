@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import AllergensSection from "../Components/ProductDetails/AllergensSection";
 import Contains from "../Components/ProductDetails/ContainsIngredients";
 import NutrientLevels from "../Components/ProductDetails/NutrientLevels";
-import ProductCard from "../Components/ProductResults/ProductCard";
 import "../Components/ProductDetails/Productdetails.scss";
-import ModalImage from "react-modal-image";
 import IngredientsCard from "../Components/IngredientsCard";
 import NutritionsCard from "../Components/NutritionsCard";
 import ScoreCard from "../Components/ScoreCard";
@@ -63,8 +61,6 @@ export default class DetailsPage extends Component {
     };
 
     const pictures = this.state.product?.selected_images;
-    const picFrontLarge = getPic(pictures?.front?.display);
-    const picFrontSmall = getPic(pictures?.front?.small);
     const picIngreLarge = getPic(pictures?.ingredients?.display);
     const picIngreSmall = getPic(pictures?.ingredients?.small);
     const picNutriLarge = getPic(pictures?.nutrition?.display);
@@ -76,7 +72,7 @@ export default class DetailsPage extends Component {
     // ingredients section
     const Ingriedient = this.state.ingredients.map((ingred) => {
       return (
-        <div>
+        <div key={ingred.id}>
           <div>
             {Number(ingred.rank) > 0 && <div>Item Nr. {ingred.rank}</div>}
             {ingred.text > "" && (
