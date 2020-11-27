@@ -39,7 +39,7 @@ export default class ResultsPage extends Component {
           <div className="filters-section">
             <Filters getFilteredProducts={this.getFilteredProducts} />
           </div>
-          {this.state.isLoading && <div class="loader"></div>}
+          {this.state.isLoading && <div className="loader"></div>}
           <div className="results-list">
             {this.state.products.map((item) => {
               return (
