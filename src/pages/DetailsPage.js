@@ -40,7 +40,7 @@ export default class DetailsPage extends Component {
   }
 
   render() {
-    const CatTag = this.state.catTag.toString().replace(/en:/g, " ");
+    const CatTag = this.state.catTag?.toString().replace(/en:/g, " ");
     //
     // pictures X function getPic = correct image
     const getPic = (pic, en, de, all) => {
@@ -70,7 +70,7 @@ export default class DetailsPage extends Component {
 
     //
     // ingredients section
-    const Ingriedient = this.state.ingredients.map((ingred) => {
+    const Ingriedient = this.state.ingredients?.map((ingred) => {
       return (
         <div key={ingred.id}>
           <div>
@@ -119,18 +119,21 @@ export default class DetailsPage extends Component {
     //
 
     //
-    // nutritions section
-    const Score = Object.entries(this.state.score).map(([key, val]) => (
-      <div key={key}>
-        {key}: {val}
-      </div>
-    ));
+    // nutritions sectio
+    let Score;
+    if (this.state.score) {
+      Score = Object.entries(this.state.score).map(([key, val]) => (
+        <div key={key}>
+          {key}: {val}
+        </div>
+      ));
+    }
     // end of nutritions section
     //
 
     return (
       <div className="product-details-container">
-        <h3>Product Details</h3>
+        <h3 className="page-header">Product Details</h3>
         <div className="main-product-info details-box">
           <DetailsBasicCard
             code={this.state.product?.code}

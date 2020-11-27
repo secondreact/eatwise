@@ -7,7 +7,7 @@ import AboutPageImage from "../pages/shared/general_images/eating_salad_.svg";
 function AboutPage() {
   return (
     <div>
-      <h2>About EatWise</h2>
+      <h2 className="page-header">About EatWise</h2>
       <div className="about-section">
         <div className="image-about">
           <img src={AboutPageImage} alt="Woman eating a salad" />
