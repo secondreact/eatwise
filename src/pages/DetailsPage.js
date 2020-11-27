@@ -7,6 +7,7 @@ import IngredientsCard from "../Components/IngredientsCard";
 import NutritionsCard from "../Components/NutritionsCard";
 import ScoreCard from "../Components/ScoreCard";
 import DetailsBasicCard from "../Components/ProductResults/DetailsBasicCard";
+import ModalImage from "react-modal-image";
 
 export default class DetailsPage extends Component {
   constructor(props) {
@@ -18,8 +19,7 @@ export default class DetailsPage extends Component {
       score: [],
       catTag: [],
 
-      ingreTag: []
-
+      ingreTag: [],
     };
   }
 
@@ -33,7 +33,7 @@ export default class DetailsPage extends Component {
           nutritions: response?.product?.nutriments,
           score: response?.product?.nutriscore_data,
           catTag: response?.product?.categories_tags,
-          ingreTag: response?.product?.ingredients_text_debug
+          ingreTag: response?.product?.ingredients_text_debug,
         });
       });
   }
@@ -46,8 +46,8 @@ export default class DetailsPage extends Component {
   render() {
     const CatTag = this.state.catTag?.toString().replace(/en:/g, " ");
 
-    const IngreTag = this.state.ingreTag?.toString().replace(/_/g, "")
-    
+    const IngreTag = this.state.ingreTag?.toString().replace(/_/g, "");
+
     // pictures X function getPic = correct image
     const getPic = (pic, en, de, all) => {
       const notFound = this.state?.image_url;
@@ -67,6 +67,8 @@ export default class DetailsPage extends Component {
     };
 
     const pictures = this.state.product?.selected_images;
+    const picFrontLarge = getPic(pictures?.front?.display);
+    const picFrontSmall = getPic(pictures?.front?.small); //to be added if the modal is used
     const picIngreLarge = getPic(pictures?.ingredients?.display);
     const picIngreSmall = getPic(pictures?.ingredients?.small);
     const picNutriLarge = getPic(pictures?.nutrition?.display);
@@ -78,46 +80,39 @@ export default class DetailsPage extends Component {
     // ingredients section
     const Ingriedient = this.state.ingredients?.map((ingred) => {
       return (
-
-        <div>
-          <div key={ingred.id} className='ingredCard'>
-
-          <div>
-
-            {Number(ingred.rank) > 0 && <div>Item Nr. {ingred.rank}</div>}
-            {ingred.text > "" && (
-              <div>
-                {ingred.text.replace(/_/g, "")} <br />{" "}
-                {ingred.id.replace(/en:/g, "").replace(/fr:/g, "")}
-              </div>
-            )}
-            {ingred.vegan > "" && <div>Vegan: {ingred.vegan} </div>}
-            {ingred.from_palm_oil > "" && (
-              <div>from-palm-oil: {ingred.from_palm_oil} </div>
-            )}
-            {ingred.percent_estimate > 0 && (
-              <div>
-                percent estimate: {Number(ingred.percent_estimate).toFixed(3)}{" "}
-              </div>
-            )}
-            {ingred.percent > 0 && (
-              <div>percent: {Number(ingred.percent).toFixed(3)} </div>
-            )}
-            {ingred.has_sub_ingredients > "" && (
-              <div>sub-ingredients: {ingred.has_sub_ingredients} </div>
-            )}
-            <div>
-              <br />
-            </div>
+        <>
+          <div key={ingred.id} className="ingredCard">
+            <>
+              {Number(ingred.rank) > 0 && <div>Item Nr. {ingred.rank}</div>}
+              {ingred.text > "" && (
+                <div>
+                  {ingred.text.replace(/_/g, "")} <br />{" "}
+                  {ingred.id.replace(/en:/g, "").replace(/fr:/g, "")}
+                </div>
+              )}
+              {ingred.vegan > "" && <div>Vegan: {ingred.vegan} </div>}
+              {ingred.from_palm_oil > "" && (
+                <div>from-palm-oil: {ingred.from_palm_oil} </div>
+              )}
+              {ingred.percent_estimate > 0 && (
+                <div>
+                  percent estimate: {Number(ingred.percent_estimate).toFixed(3)}{" "}
+                </div>
+              )}
+              {ingred.percent > 0 && (
+                <div>percent: {Number(ingred.percent).toFixed(3)} </div>
+              )}
+              {ingred.has_sub_ingredients > "" && (
+                <div>sub-ingredients: {ingred.has_sub_ingredients} </div>
+              )}
+            </>
           </div>
-        </div>
+        </>
       );
     });
-    // end of ingredients section
-    //
+    /* end of ingredients section
 
-    //
-    // nutritions section
+    nutritions section */
     const Nutritions = Object.entries(this.state.nutritions).map(
       ([key, val]) => (
         <div key={key}>
@@ -125,11 +120,11 @@ export default class DetailsPage extends Component {
         </div>
       )
     );
-    // end of nutritions section
+    /* // end of nutritions section
     //
 
     //
-    // nutritions sectio
+    // nutritions section */
     let Score;
     if (this.state.score) {
       Score = Object.entries(this.state.score).map(([key, val]) => (
@@ -138,6 +133,7 @@ export default class DetailsPage extends Component {
         </div>
       ));
     }
+
     // end of nutritions section
     //
 
@@ -162,42 +158,43 @@ export default class DetailsPage extends Component {
         </div>
 
         <div>
+          <ModalImage
+            className="hidden"
+            large={picFrontLarge}
+            small={picFrontSmall}
+            alt={this.state.product?.product_name}
+          />
 
-        <ModalImage
-          large={picFrontLarge}
-          small={picFrontSmall}
-          alt={this.state.product?.product_name}
-        />
-        
-        <div className='toggleContainer'>
-        <div className='Ingredients'>
-          <IngredientsCard
-            className="ingredients"
-            ingreTitle={"Ingredients"}
-            ingreTag={IngreTag}
-            ingreContent={Ingriedient}
-            large={picIngreLarge}
-            small={picIngreSmall}
-          />
-        </div>
-        <div>
-          <NutritionsCard
-            className={"nutritions"}
-            nutriTitle={"Nutritions"}
-            nutriContent={Nutritions}
-            large={picNutriLarge}
-            small={picNutriSmall}
-          />
-        </div>
-        <div>
-          <ScoreCard
-            className={"score"}
-            scoreTitle={"Score"}
-            scoreContent={Score}
-            scoreNovaTag={this.state.product?.nova_groups_tags}
-            scoreNova={this.state.product?.nova_group}
-          />
-        </div>
+          <div className="toggleContainer">
+            <div className="Ingredients">
+              <IngredientsCard
+                className="ingredients"
+                ingreTitle={"Ingredients"}
+                ingreTag={IngreTag}
+                ingreContent={Ingriedient}
+                large={picIngreLarge}
+                small={picIngreSmall}
+              />
+            </div>
+            <div>
+              <NutritionsCard
+                className={"nutritions"}
+                nutriTitle={"Nutritions"}
+                nutriContent={Nutritions}
+                large={picNutriLarge}
+                small={picNutriSmall}
+              />
+            </div>
+            <div>
+              <ScoreCard
+                className={"score"}
+                scoreTitle={"Score"}
+                scoreContent={Score}
+                scoreNovaTag={this.state.product?.nova_groups_tags}
+                scoreNova={this.state.product?.nova_group}
+              />
+            </div>
+          </div>
         </div>
       </div>
     );
